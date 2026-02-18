@@ -1,3 +1,3 @@
-export default function About() {
-  return <div>About Page</div>;
+export default function AboutPage() {
+  return <div>О нас</div>;
 }
