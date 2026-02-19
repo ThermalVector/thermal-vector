@@ -1,33 +1,27 @@
 import type { Metadata } from 'next';
-import NavBar from './components/navbar';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Providers } from './providers';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin', 'cyrillic'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin', 'cyrillic'],
-});
 
 export const metadata: Metadata = {
   title: 'Thermal Vector',
-  description: 'Оптические модули и линзы',
+  description: 'Your app description',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang='ru'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NavBar />
-        {children}
+    <html lang='en' suppressHydrationWarning>
+      <body className='min-h-screen flex flex-col'>
+        <Providers>
+          <Navbar />
+          <main className='flex-grow pt-16'>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
