@@ -1,4 +1,4 @@
-import { type IconName } from '@/constants/icons';
+import { type IconName } from '@/app/constants/icons';
 import FeatureCardClient from './FeatureCard.client';
 
 type FeatureCardProps = {

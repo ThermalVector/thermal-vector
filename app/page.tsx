@@ -4,7 +4,7 @@ import FeatureCard from '@/components/ui/cards/FeatureCard';
 import Section from '@/components/ui/layout/Section';
 import Container from '@/components/ui/layout/Container';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import type { IconName } from '@/constants/icons';
+import type { IconName } from '@/app/constants/icons';
 
 export default function HomePage() {
   const features: Array<{

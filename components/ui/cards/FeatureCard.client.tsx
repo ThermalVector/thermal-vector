@@ -2,7 +2,7 @@
 
 import { Card, CardBody, CardHeader } from '@heroui/react';
 import Link from 'next/link';
-import { ICONS, type IconName } from '@/constants/icons';
+import { ICONS, type IconName } from '@/app/constants/icons';
 
 type FeatureCardProps = {
   iconName: IconName;
