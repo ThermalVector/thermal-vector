@@ -18,3 +18,38 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out;
+}
+
+/* Ensure navbar stays sticky */
+header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+}
+
+/* Fix for iOS Safari sticky positioning */
+@supports (-webkit-touch-callout: none) {
+  header {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+  }
+}
+
+/* Ensure content doesn't hide behind navbar */
+main {
+  padding-top: 4rem; /* Match navbar height */
+}

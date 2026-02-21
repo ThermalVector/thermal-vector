@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function CatalogPage() {
   return (
     <div className='container mx-auto px-4 py-12'>
@@ -12,6 +14,12 @@ export default function CatalogPage() {
             <div className='bg-gray-200 h-48 rounded-md mb-4'></div>
             <h3 className='font-semibold text-lg'>Product {item}</h3>
             <p className='text-gray-600'>Description for product {item}</p>
+            <Link
+              href='/item'
+              className='text-blue-600 hover:text-blue-800 font-medium'
+            >
+              Подробнее →
+            </Link>
           </div>
         ))}
       </div>
