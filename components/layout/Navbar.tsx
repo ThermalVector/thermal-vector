@@ -8,26 +8,73 @@ import {
 } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  Bars3Icon,
+  XMarkIcon,
+  HomeIcon,
+  CubeIcon,
+  UsersIcon,
+  ScaleIcon,
+} from '@heroicons/react/24/outline';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const [navbarHeight, setNavbarHeight] = useState(0);
   const pathname = usePathname();
+  const router = useRouter();
   const menuRef = useRef<HTMLDivElement>(null);
   const navbarRef = useRef<HTMLElement>(null);
 
   const menuItems = [
-    { name: 'Каталог', href: '/catalog' },
-    { name: 'О нас', href: '/about' },
-    { name: 'Сравнить', href: '/comparator' },
+    { name: 'Каталог', href: '/catalog', icon: CubeIcon },
+    { name: 'О нас', href: '/about', icon: UsersIcon },
+    { name: 'Сравнить', href: '/comparator', icon: ScaleIcon },
   ];
 
   const isActive = (path: string) => pathname === path;
 
-  // Handle scroll effect for better performance
+  // Close menu when pathname changes (new page loaded)
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsNavigating(false);
+  }, [pathname]);
+
+  // Handle navigation
+  const handleNavigation = (href: string) => {
+    if (isNavigating) return;
+
+    // If we're already on this page, just close the menu
+    if (pathname === href) {
+      setIsMenuOpen(false);
+      return;
+    }
+
+    setIsNavigating(true);
+    // Keep menu open during navigation
+    router.push(href);
+  };
+
+  // Get navbar height after render
+  useEffect(() => {
+    if (navbarRef.current) {
+      setNavbarHeight(navbarRef.current.offsetHeight);
+    }
+
+    const handleResize = () => {
+      if (navbarRef.current) {
+        setNavbarHeight(navbarRef.current.offsetHeight);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -37,10 +84,45 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen && !isNavigating) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.overflow = 'hidden';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen, isNavigating]);
+
   // Handle click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (
+        !isNavigating &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -52,15 +134,16 @@ export default function Navbar() {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isNavigating]);
 
   return (
     <>
       <HeroNavbar
         ref={navbarRef}
         className={`
-          bg-[#282828] border-none py-2 transition-all duration-200
+          bg-[#282828] border-none transition-all duration-200
           ${isScrolled ? 'shadow-lg' : ''}
+          px-8 py-3
         `}
         style={{
           position: 'fixed',
@@ -71,7 +154,7 @@ export default function Navbar() {
           transform: 'translateZ(0)',
         }}
         maxWidth='full'
-        height='4rem'
+        height='auto'
         isBordered={false}
         shouldBlockScroll={false}
       >
@@ -118,6 +201,7 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className='text-white focus:outline-none'
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            disabled={isNavigating}
           >
             {isMenuOpen ? (
               <XMarkIcon className='w-6 h-6' />
@@ -133,41 +217,79 @@ export default function Navbar() {
         </NavbarContent>
       </HeroNavbar>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - No gap */}
       {isMenuOpen && (
         <div
           ref={menuRef}
-          className='lg:hidden fixed bg-[#282828] border-t border-gray-700 overflow-y-auto'
+          className='lg:hidden fixed bg-[#1e1e1e] z-40'
           style={{
-            top: '4rem',
-            zIndex: 40,
-            position: 'fixed',
+            top: navbarHeight ? `${navbarHeight}px` : '64px',
             left: 0,
             right: 0,
             bottom: 0,
-            height: 'calc(100vh - 4rem)',
-            WebkitOverflowScrolling: 'touch', // Smooth scrolling on iOS
+            height: navbarHeight
+              ? `calc(100vh - ${navbarHeight}px)`
+              : 'calc(100vh - 64px)',
+            overflowY: 'auto',
+            pointerEvents: isNavigating ? 'none' : 'auto',
+            opacity: isNavigating ? 0.7 : 1,
+            transition: 'opacity 0.2s ease',
           }}
         >
-          <div className='container mx-auto px-4 py-2'>
-            {menuItems.map((item, index) => (
-              <Link
-                key={`${item.name}-${index}`}
-                href={item.href}
+          <div className='flex flex-col h-full'>
+            <div className='flex-1 container mx-auto px-4 py-6'>
+              {/* Home link with icon */}
+              <button
+                onClick={() => handleNavigation('/')}
+                disabled={isNavigating}
                 className={`
-                  w-full py-4 px-2 text-base uppercase tracking-wide block border-b border-gray-700 last:border-none
+                  w-full py-5 px-4 text-lg uppercase tracking-wide block mb-2
                   ${
-                    isActive(item.href)
-                      ? 'text-white font-semibold'
-                      : 'text-gray-300 hover:text-white'
+                    isActive('/')
+                      ? 'text-white font-semibold bg-gray-700/50 rounded-lg'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-700/30 rounded-lg'
                   }
-                  transition-colors duration-200
+                  transition-all duration-200 flex items-center gap-3
+                  ${isNavigating && pathname !== '/' ? 'cursor-wait opacity-50' : 'cursor-pointer'}
                 `}
-                onClick={() => setIsMenuOpen(false)}
               >
-                {item.name}
-              </Link>
-            ))}
+                <HomeIcon className='w-5 h-5' />
+                <span>Главная</span>
+              </button>
+
+              {/* Menu items with icons */}
+              {menuItems.map((item, index) => {
+                const Icon = item.icon;
+                const isCurrentPage = isActive(item.href);
+                return (
+                  <button
+                    key={`${item.name}-${index}`}
+                    onClick={() => handleNavigation(item.href)}
+                    disabled={isNavigating && !isCurrentPage}
+                    className={`
+                      w-full py-5 px-4 text-lg uppercase tracking-wide block mb-2
+                      ${
+                        isCurrentPage
+                          ? 'text-white font-semibold bg-gray-700/50 rounded-lg'
+                          : 'text-gray-300 hover:text-white hover:bg-gray-700/30 rounded-lg'
+                      }
+                      transition-all duration-200 flex items-center gap-3
+                      ${isNavigating && !isCurrentPage ? 'cursor-wait opacity-50' : 'cursor-pointer'}
+                    `}
+                  >
+                    <Icon className='w-5 h-5' />
+                    <span>{item.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Optional footer in mobile menu */}
+            <div className='p-4 border-t border-gray-800'>
+              <p className='text-sm text-gray-400 text-center'>
+                © 2026 Thermal Vector
+              </p>
+            </div>
           </div>
         </div>
       )}

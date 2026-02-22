@@ -1,10 +1,10 @@
 import PrimaryButton from '@/components/ui/buttons/PrimaryButton';
-import OutlineButton from '@/components/ui/buttons/OutlineButton';
 import FeatureCard from '@/components/ui/cards/FeatureCard';
 import Section from '@/components/ui/layout/Section';
 import Container from '@/components/ui/layout/Container';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import type { IconName } from '@/app/constants/icons';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import OutlineButton from '@/components/ui/buttons/OutlineButton';
 
 export default function HomePage() {
   const features: Array<{
@@ -53,15 +53,15 @@ export default function HomePage() {
             <p className='text-xl text-gray-300 mb-8'>
               Самый лучший бренд высококачественной оптики и линз.
             </p>
-            {/* <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            <div className='flex flex-col sm:flex-row gap-4 justify-center mt-8'>
               <PrimaryButton
                 href='/catalog'
                 endContent={<ArrowRightIcon className='w-5 h-5' />}
               >
                 Сделайте выбор
               </PrimaryButton>
-              <OutlineButton href='/about'>Learn More</OutlineButton>
-            </div> */}
+              <OutlineButton href='/about'>О компании</OutlineButton>
+            </div>
           </div>
         </Container>
       </section>
@@ -72,7 +72,7 @@ export default function HomePage() {
           Почему Thermal Vector?
         </h2>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
@@ -88,7 +88,12 @@ export default function HomePage() {
           <p className='text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
             Перейтидет в каталог и выберите среди множества различной оптики.
           </p>
-          <PrimaryButton href='/catalog'>Перейти в каталог</PrimaryButton>
+          <PrimaryButton
+            href='/catalog'
+            endContent={<ArrowRightIcon className='w-5 h-5' />}
+          >
+            Перейти в каталог
+          </PrimaryButton>
         </div>
       </Section>
     </div>

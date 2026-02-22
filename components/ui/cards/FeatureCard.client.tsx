@@ -28,7 +28,9 @@ export default function FeatureCardClient({
     >
       <CardHeader className='flex gap-3'>
         <Icon className='w-8 h-8 text-blue-500' />
-        <h3 className='text-xl font-semibold'>{title}</h3>
+        <h3 className='text-xl font-semibold text-gray-900 dark:text-white'>
+          {title}
+        </h3>
       </CardHeader>
       <CardBody>
         <p className='text-gray-600 dark:text-gray-300'>{description}</p>
