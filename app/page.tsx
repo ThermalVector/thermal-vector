@@ -15,30 +15,26 @@ export default function HomePage() {
   }> = [
     {
       iconName: 'cube',
-      title: 'Extensive Catalog',
-      description:
-        'Browse through hundreds of high-quality thermal vectors and designs.',
+      title: 'Каталог товаров',
+      description: 'Выберите среди всех представленных товаров.',
       href: '/catalog',
     },
     {
       iconName: 'sparkles',
-      title: 'Premium Quality',
-      description:
-        'All vectors are carefully crafted and optimized for thermal printing.',
+      title: 'Премиальное качество',
+      description: 'Наша оптика- высочайшего класса.',
       href: '/catalog',
     },
     {
       iconName: 'users',
-      title: 'Community Driven',
-      description:
-        'Join thousands of designers and thermal printing enthusiasts.',
+      title: 'Выбор покупателя',
+      description: 'Нас выбирают тысячи.',
       href: '/about',
     },
     {
-      iconName: 'scale', // You'll need to add ScaleIcon to your ICONS constant
-      title: 'Product Comparator',
-      description:
-        'Compare products side by side to find the perfect fit for your needs.',
+      iconName: 'scale',
+      title: 'Сравнить',
+      description: 'Можете воспользоваться функцией сравнения.',
       href: '/comparator',
     },
   ];
@@ -50,32 +46,30 @@ export default function HomePage() {
         <Container className='py-24 md:py-32'>
           <div className='max-w-3xl mx-auto text-center'>
             <h1 className='text-4xl md:text-6xl font-bold mb-6'>
-              Welcome to{' '}
               <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400'>
                 Thermal Vector
               </span>
             </h1>
             <p className='text-xl text-gray-300 mb-8'>
-              Your premier destination for high-quality thermal vectors and
-              designs. Perfect for professionals and enthusiasts alike.
+              Самый лучший бренд высококачественной оптики и линз.
             </p>
-            <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            {/* <div className='flex flex-col sm:flex-row gap-4 justify-center'>
               <PrimaryButton
                 href='/catalog'
                 endContent={<ArrowRightIcon className='w-5 h-5' />}
               >
-                Explore Catalog
+                Сделайте выбор
               </PrimaryButton>
               <OutlineButton href='/about'>Learn More</OutlineButton>
-            </div>
+            </div> */}
           </div>
         </Container>
       </section>
 
       {/* Features Section */}
-      <Section className='bg-white dark:bg-gray-900'>
+      <Section className='bg-white dark:bg-gray-900 text-gray-900 dark:text-white'>
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-12'>
-          Why Choose Thermal Vector?
+          Почему Thermal Vector?
         </h2>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
@@ -86,16 +80,15 @@ export default function HomePage() {
       </Section>
 
       {/* CTA Section */}
-      <Section className='bg-gray-50 dark:bg-gray-800'>
+      <Section className='bg-gray-50 dark:bg-gray-800 dark:text-white'>
         <div className='text-center'>
           <h2 className='text-3xl md:text-4xl font-bold mb-4'>
-            Ready to Get Started?
+            Хотите ознакомиться с полным перечнем товаров?
           </h2>
           <p className='text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto'>
-            Browse our catalog of premium thermal vectors and find the perfect
-            design for your next project.
+            Перейтидет в каталог и выберите среди множества различной оптики.
           </p>
-          <PrimaryButton href='/catalog'>Browse Catalog</PrimaryButton>
+          <PrimaryButton href='/catalog'>Перейти в каталог</PrimaryButton>
         </div>
       </Section>
     </div>

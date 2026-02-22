@@ -20,9 +20,9 @@ export default function Navbar() {
   const navbarRef = useRef<HTMLElement>(null);
 
   const menuItems = [
-    { name: 'Catalog', href: '/catalog' },
-    { name: 'About', href: '/about' },
-    { name: 'Compare', href: '/comparator' },
+    { name: 'Каталог', href: '/catalog' },
+    { name: 'О нас', href: '/about' },
+    { name: 'Сравнить', href: '/comparator' },
   ];
 
   const isActive = (path: string) => pathname === path;

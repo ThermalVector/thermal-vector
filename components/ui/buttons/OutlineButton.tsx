@@ -15,7 +15,7 @@ const OutlineButton = forwardRef<HTMLButtonElement, OutlineButtonProps>(
       ref,
       variant: 'bordered' as const,
       size: 'lg' as const,
-      className: `text-lg font-medium border-white text-white hover:bg-white/10 ${className}`,
+      className: `text-lg font-medium text-white border-white hover:bg-white/10 ${className}`,
       ...props,
     };
 

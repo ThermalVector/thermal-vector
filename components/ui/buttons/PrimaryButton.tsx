@@ -15,7 +15,7 @@ const PrimaryButton = forwardRef<HTMLButtonElement, PrimaryButtonProps>(
       ref,
       color: 'primary' as const,
       size: 'lg' as const,
-      className: `text-lg font-medium ${className}`,
+      className: `text-lg font-medium text-white ${className}`,
       ...props,
     };
 

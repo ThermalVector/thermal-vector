@@ -6,21 +6,25 @@ export default function Footer() {
       <div className='container mx-auto px-4'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           <div>
-            <h3 className='font-semibold text-lg mb-3'>Thermal Vector</h3>
+            <h3 className='font-semibold text-lg mb-3 dark:text-white'>
+              Thermal Vector
+            </h3>
             <p className='text-gray-600 dark:text-gray-300'>
-              Your trusted source for thermal vectors and designs.
+              Нам доверяют миллионы.
             </p>
           </div>
 
           <div>
-            <h3 className='font-semibold text-lg mb-3'>Quick Links</h3>
+            <h3 className='font-semibold text-lg mb-3 dark:text-white'>
+              Навигация
+            </h3>
             <ul className='space-y-2'>
               <li>
                 <Link
                   href='/catalog'
                   className='text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                 >
-                  Catalog
+                  Каталог
                 </Link>
               </li>
               <li>
@@ -28,18 +32,20 @@ export default function Footer() {
                   href='/about'
                   className='text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                 >
-                  About
+                  О нас
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className='font-semibold text-lg mb-3'>Contact</h3>
+            <h3 className='font-semibold text-lg mb-3 dark:text-white'>
+              Контакты
+            </h3>
             <p className='text-gray-600 dark:text-gray-300'>
-              Email: info@thermalvector.com
+              Email: bolgarev@suncti.ru
               <br />
-              Phone: (555) 123-4567
+              Phone: +7 (999) 998-98-46
             </p>
           </div>
         </div>
