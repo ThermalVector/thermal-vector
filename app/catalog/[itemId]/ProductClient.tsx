@@ -34,7 +34,7 @@ export default function ProductClient({ product }: ProductClientProps) {
                   className='w-full h-full object-cover'
                 />
               ) : (
-                `Product Image ${product.id}`
+                `Изображение ${product.id}`
               )}
             </div>
           </div>

@@ -5,7 +5,7 @@ export type Product = {
   price: string;
   category: string;
   imageUrl?: string;
-  features?: string[];
+  features: string[];
 };
 
 export const products: Product[] = [
@@ -79,6 +79,32 @@ export const products: Product[] = [
     name: 'Thermal Vector 6',
     description: 'Creative thermal vector for artistic projects.',
     price: '$19.99',
+    category: 'Floral',
+    features: [
+      'Artistic interpretation',
+      'Color variations',
+      'Perfect for digital art',
+      'Social media ready',
+    ],
+  },
+  {
+    id: 7,
+    name: 'Thermal Vector 7',
+    description: 'Creative thermal vector for artistic projects.',
+    price: '$1119.99',
+    category: 'Floral',
+    features: [
+      'Artistic interpretation',
+      'Color variations',
+      'Perfect for digital art',
+      'Social media ready',
+    ],
+  },
+  {
+    id: 8,
+    name: 'Thermal Vector 8',
+    description: 'Creative thermal vector for artistic projects.',
+    price: '$9.99',
     category: 'Floral',
     features: [
       'Artistic interpretation',

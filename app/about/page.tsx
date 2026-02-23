@@ -1,27 +1,30 @@
 export default function AboutPage() {
   return (
     <div className='container mx-auto px-4 py-12 max-w-3xl'>
-      <h1 className='text-4xl font-bold mb-6'>About Thermal Vector</h1>
+      <h1 className='text-4xl font-bold mb-6'>О компании Thermal Vector</h1>
 
       <div className='prose dark:prose-invert'>
         <p className='text-lg mb-4'>
-          Welcome to Thermal Vector, your premier destination for high-quality
-          thermal vectors and designs.
+          Добро пожаловать в Thermal Vector — ваш надежный источник
+          высококачественных термальных векторов и дизайнов.
         </p>
 
-        <h2 className='text-2xl font-semibold mt-8 mb-4'>Our Mission</h2>
+        <h2 className='text-2xl font-semibold mt-8 mb-4'>Наша миссия</h2>
         <p>
-          We strive to provide the best thermal vector solutions for
-          professionals and enthusiasts alike. Our collection is carefully
-          curated to ensure quality and usability.
+          Мы стремимся предоставлять лучшие решения в области термальных
+          векторов как для профессионалов, так и для энтузиастов. Наша коллекция
+          тщательно подобрана, чтобы гарантировать качество и удобство
+          использования.
         </p>
 
-        <h2 className='text-2xl font-semibold mt-8 mb-4'>Why Choose Us</h2>
+        <h2 className='text-2xl font-semibold mt-8 mb-4'>
+          Почему выбирают нас
+        </h2>
         <ul className='list-disc pl-6 mb-6'>
-          <li>High-quality thermal vectors</li>
-          <li>Regular updates with new designs</li>
-          <li>Easy to use and integrate</li>
-          <li>Excellent customer support</li>
+          <li>Высококачественные термальные векторы</li>
+          <li>Регулярное пополнение коллекции новыми дизайнами</li>
+          <li>Простота использования и интеграции</li>
+          <li>Превосходная поддержка клиентов</li>
         </ul>
       </div>
     </div>

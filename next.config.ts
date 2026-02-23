@@ -4,10 +4,15 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   images: {
-    domains: [
-      "www.thermeyetec.com"
-    ]
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.thermeyetec.com',
+        port: '',
+        pathname: '/**', // This allows all paths under the domain
+      },
+    ],
+  },
 };
 
 export default nextConfig;

@@ -44,16 +44,17 @@ export default function Footer() {
             </h3>
             <p className='text-gray-600 dark:text-gray-300'>
               Email: bolgarev@suncti.ru
-              <br />
-              Phone: +7 (999) 998-98-46
+            </p>
+            <p className='text-gray-600 dark:text-gray-300'>
+              Phone: +7 999 998-98-46
             </p>
           </div>
         </div>
 
         <div className='border-t dark:border-gray-800 mt-8 pt-6 text-center text-gray-600 dark:text-gray-300'>
           <p>
-            &copy; {new Date().getFullYear()} Thermal Vector. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Thermal Vector. Все права
+            защищены.
           </p>
         </div>
       </div>

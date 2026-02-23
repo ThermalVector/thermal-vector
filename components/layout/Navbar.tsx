@@ -31,8 +31,8 @@ export default function Navbar() {
 
   const menuItems = [
     { name: 'Каталог', href: '/catalog', icon: CubeIcon },
-    { name: 'О нас', href: '/about', icon: UsersIcon },
     { name: 'Сравнить', href: '/comparator', icon: ScaleIcon },
+    { name: 'О нас', href: '/about', icon: UsersIcon },
   ];
 
   const isActive = (path: string) => pathname === path;
