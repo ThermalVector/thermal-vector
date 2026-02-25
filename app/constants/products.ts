@@ -11,7 +11,7 @@ export type Product = {
 export const products: Product[] = [
   {
     id: 1,
-    name: 'Thermal Vector 1',
+    name: 'Lorem Ipsun',
     description: 'Высококачественная оптика 1.',
     price: '9.999,00 ₽',
     category: 'Animals',
@@ -24,7 +24,7 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    name: 'Thermal Vector 2',
+    name: 'Gogol mogol',
     description: 'Высококачественная оптика 2.',
     price: '8.100,00 ₽',
     category: 'Nature',
@@ -38,7 +38,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: 'Thermal Vector 3',
-    description: 'Advanced thermal imaging vector for specialists.',
+    description: 'Advanced thermal imaging vector for specialists. Advanced thermal imaging vector for specialists. Advanced thermal imaging vector for specialists.',
     price: '109.999,00 ₽',
     category: 'Abstract',
     features: [

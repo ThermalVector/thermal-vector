@@ -29,11 +29,11 @@ export default function ProductCard({
           </div>
           <div className='p-4'>
             <h3 className='text-lg font-semibold mb-2'>{name}</h3>
-            {description && (
-              <p className='text-sm text-gray-600 dark:text-gray-300 mb-2 line-clamp-2'>
-                {description}
+            <div className='h-10 mb-2 overflow-hidden'>
+              <p className='text-sm text-gray-600 dark:text-gray-300 line-clamp-2'>
+                {description ?? '\u00A0'}
               </p>
-            )}
+            </div>
             <div className='flex justify-between items-center'>
               <span className='text-sm text-gray-500'>{category}</span>
               <span className='text-xl font-bold text-blue-600'>{price}</span>
