@@ -163,7 +163,7 @@ export default function Navbar() {
           <NavbarBrand>
             <Link href='/' className='flex items-center gap-2'>
               <Image
-                src='/logos/logo_normal.png'
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/logos/logo_normal.png`}
                 alt='Thermal Vector Logo'
                 width={120}
                 height={40}
