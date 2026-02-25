@@ -12,8 +12,8 @@ export const products: Product[] = [
   {
     id: 1,
     name: 'Thermal Vector 1',
-    description: 'High-quality thermal vector design for professional use.',
-    price: '$29.99',
+    description: 'Высококачественная оптика 1.',
+    price: '9.999,00 ₽',
     category: 'Animals',
     features: [
       'High-resolution vector file',
@@ -25,8 +25,8 @@ export const products: Product[] = [
   {
     id: 2,
     name: 'Thermal Vector 2',
-    description: 'Premium thermal vector with detailed patterns.',
-    price: '$34.99',
+    description: 'Высококачественная оптика 2.',
+    price: '8.100,00 ₽',
     category: 'Nature',
     features: [
       'High-resolution vector file',
@@ -39,7 +39,7 @@ export const products: Product[] = [
     id: 3,
     name: 'Thermal Vector 3',
     description: 'Advanced thermal imaging vector for specialists.',
-    price: '$39.99',
+    price: '109.999,00 ₽',
     category: 'Abstract',
     features: [
       'Ultra-high resolution (600 dpi)',
@@ -52,7 +52,7 @@ export const products: Product[] = [
     id: 4,
     name: 'Thermal Vector 4',
     description: 'Versatile thermal vector suitable for various applications.',
-    price: '$24.99',
+    price: '59.500,00 ₽',
     category: 'Geometric',
     features: [
       'Scalable vector graphics',
@@ -65,7 +65,7 @@ export const products: Product[] = [
     id: 5,
     name: 'Thermal Vector 5',
     description: 'Professional-grade thermal vector with high detail.',
-    price: '$44.99',
+    price: '20.500,00 ₽',
     category: 'Animals',
     features: [
       'Museum-quality detail',
@@ -78,7 +78,7 @@ export const products: Product[] = [
     id: 6,
     name: 'Thermal Vector 6',
     description: 'Creative thermal vector for artistic projects.',
-    price: '$19.99',
+    price: '19.500,00 ₽',
     category: 'Floral',
     features: [
       'Artistic interpretation',
@@ -91,7 +91,7 @@ export const products: Product[] = [
     id: 7,
     name: 'Thermal Vector 7',
     description: 'Creative thermal vector for artistic projects.',
-    price: '$1119.99',
+    price: '100.500,00 ₽',
     category: 'Floral',
     features: [
       'Artistic interpretation',
@@ -104,7 +104,7 @@ export const products: Product[] = [
     id: 8,
     name: 'Thermal Vector 8',
     description: 'Creative thermal vector for artistic projects.',
-    price: '$9.99',
+    price: '59.500,00 ₽',
     category: 'Floral',
     features: [
       'Artistic interpretation',

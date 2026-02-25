@@ -9,13 +9,12 @@ export async function generateStaticParams() {
   }));
 }
 
-// Generate metadata for each product page - params needs await
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ itemId: string }>;
 }) {
-  const { itemId } = await params; // 👈 Await the params Promise
+  const { itemId } = await params;
   const product = getProductById(parseInt(itemId));
 
   if (!product) {
@@ -30,13 +29,12 @@ export async function generateMetadata({
   };
 }
 
-// Page component - params needs await
 export default async function ItemPage({
   params,
 }: {
   params: Promise<{ itemId: string }>;
 }) {
-  const { itemId } = await params; // 👈 Await the params Promise
+  const { itemId } = await params; 
   const product = getProductById(parseInt(itemId));
 
   // If product doesn't exist, show 404

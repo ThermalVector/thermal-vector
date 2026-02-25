@@ -32,12 +32,12 @@ export default function NotFound() {
 
             {/* Error Message */}
             <h2 className='text-3xl md:text-4xl font-bold mb-6'>
-              Page Not Found
+              Страница не найдена
             </h2>
 
             <p className='text-xl text-gray-300 mb-8 max-w-2xl mx-auto'>
-              Oops! The page you're looking for seems to have wandered off into
-              the thermal imaging void.
+              Упс! Похоже, страница, которую вы ищете, заблудилась в мире
+              тепловизионной техники.
             </p>
 
             {/* Decorative element */}
@@ -48,26 +48,26 @@ export default function NotFound() {
             {/* Suggestions */}
             <div className='mb-12'>
               <h3 className='text-lg font-semibold mb-4 text-gray-300'>
-                Here are some helpful links instead:
+                Вот несколько полезных ссылок:
               </h3>
               <div className='flex flex-wrap justify-center gap-4'>
                 <Link
                   href='/catalog'
                   className='px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 text-gray-300 hover:text-white'
                 >
-                  Catalog
+                  Каталог
                 </Link>
                 <Link
                   href='/about'
                   className='px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 text-gray-300 hover:text-white'
                 >
-                  About Us
+                  О нас
                 </Link>
                 <Link
                   href='/comparator'
                   className='px-4 py-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors duration-200 text-gray-300 hover:text-white'
                 >
-                  Compare Products
+                  Сравнение товаров
                 </Link>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function NotFound() {
                 className='text-lg'
                 startContent={<HomeIcon className='w-5 h-5' />}
               >
-                Back to Home
+                На главную
               </Button>
 
               <Button
@@ -92,20 +92,20 @@ export default function NotFound() {
                 className='text-lg border-gray-600 text-gray-300 hover:bg-gray-800'
                 startContent={<ArrowLeftIcon className='w-5 h-5' />}
               >
-                Go Back
+                Назад
               </Button>
             </div>
 
             {/* Search suggestion */}
             <div className='mt-12 pt-8 border-t border-gray-700'>
               <p className='text-gray-400 mb-4'>
-                Looking for something specific? Try searching our catalog:
+                Ищете что-то конкретное? Попробуйте поиск по каталогу:
               </p>
               <div className='max-w-md mx-auto'>
                 <div className='relative'>
                   <input
                     type='text'
-                    placeholder='Search products...'
+                    placeholder='Поиск товаров...'
                     className='w-full px-4 py-3 pl-12 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-colors'
                   />
                   <MagnifyingGlassIcon className='absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400' />
@@ -118,7 +118,7 @@ export default function NotFound() {
 
       {/* Footer note */}
       <div className='absolute bottom-4 left-0 right-0 text-center text-gray-500 text-sm'>
-        Error 404 - Page Not Found
+        Ошибка 404 — Страница не найдена
       </div>
     </div>
   );

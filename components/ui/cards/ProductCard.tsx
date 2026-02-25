@@ -24,7 +24,7 @@ export default function ProductCard({
         <Link href={`/catalog/${id}`} className='block'>
           <div className='relative h-48 bg-gray-200'>
             <div className='absolute inset-0 flex items-center justify-center text-gray-400'>
-              Product Image {id}
+              Изображение {name}
             </div>
           </div>
           <div className='p-4'>
@@ -49,7 +49,7 @@ export default function ProductCard({
           className='w-full'
           size='md'
         >
-          View Details
+          Подробнее
         </Button>
       </CardFooter>
     </Card>
