@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
 
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const basePath = isGitHubPages ? "/thermal-vector" : "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   reactCompiler: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

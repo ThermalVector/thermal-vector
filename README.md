@@ -1,5 +1,19 @@
 # Документация проекта thermal-vector
 
+## Деплой на GitHub Pages
+
+1. В репозитории: **Settings → Pages → Build and deployment**
+2. В разделе **Source** выберите **GitHub Actions**.
+3. Пуш в ветку `main` запускает сборку и публикацию. Сайт будет доступен по адресу:  
+   `https://<ваш-username>.github.io/thermal-vector/`
+
+Локальная сборка под GitHub Pages (проверка перед пушем):
+
+```bash
+GITHUB_PAGES=true npm run build
+# Статика в папке out/
+```
+
 ## Отчетность
 
 - 17.02.26
