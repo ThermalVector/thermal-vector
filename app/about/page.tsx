@@ -1,6 +1,7 @@
 export default function AboutPage() {
   return (
-    <div className='container mx-auto px-4 py-12 max-w-3xl'>
+    <div className='flex flex-1 flex-col justify-center min-h-full'>
+      <div className='container mx-auto px-4 py-12 max-w-3xl'>
       <h1 className='text-4xl font-bold mb-6'>О компании Thermal Vector</h1>
 
       <div className='prose dark:prose-invert'>
@@ -26,6 +27,7 @@ export default function AboutPage() {
           <li>Простота использования и интеграции</li>
           <li>Превосходная поддержка клиентов</li>
         </ul>
+      </div>
       </div>
     </div>
   );

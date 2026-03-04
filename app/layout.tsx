@@ -18,9 +18,11 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <body className='min-h-screen flex flex-col'>
         <Providers>
-          <Navbar />
-          <main className='flex-grow pt-16'>{children}</main>
-          <Footer />
+          <div className='flex min-h-screen flex-col'>
+            <Navbar />
+            <main className='flex flex-1 flex-col pt-16'>{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>
