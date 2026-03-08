@@ -6,6 +6,8 @@ export const metadata = {
   description: 'Сравните товары Thermal Vector по характеристикам и ценам',
 };
 
+// аналог - https://www.thermeyetec.com/support-contrast/?id=9222
+
 export default function ComparatorPage() {
   return (
     <div className='min-h-screen bg-gray-50 dark:bg-gray-900'>
