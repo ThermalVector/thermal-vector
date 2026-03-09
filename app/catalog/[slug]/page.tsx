@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
 import {
   categories,
   getCategoryIdByUrl,
 } from '@/app/constants/types/categoryTypes';
 import { products } from '@/app/constants';
 import ProductCard from '@/components/ui/cards/ProductCard';
+import BackToCatalogLink from '@/components/ui/BackToCatalogLink';
 
 function getCategoryRu(categoryId: number) {
   return categories.find((c) => c.id === categoryId)?.ru ?? '';
@@ -51,6 +51,7 @@ export default async function CategoryPage({
 
   return (
     <div className='container mx-auto px-4 py-12'>
+      <BackToCatalogLink href='/catalog' />
       <h1 className='text-4xl font-bold mb-6'>{category.ru}</h1>
       <p className='text-sm text-gray-600 mb-6 max-w-3xl'>
         {category.descriptionShort}
@@ -85,12 +86,6 @@ export default async function CategoryPage({
           />
         ))}
       </div>
-      <Link
-        href='/catalog'
-        className='mt-8 inline-block text-gray-700 font-medium hover:text-gray-900 underline underline-offset-2'
-      >
-        Назад в каталог
-      </Link>
     </div>
   );
 }

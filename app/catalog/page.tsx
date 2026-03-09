@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 import { products } from '@/app/constants';
 import {
   categories,
@@ -38,27 +39,30 @@ export default function CatalogPage() {
             <p className='text-sm text-gray-600 mb-6'>
               {category.descriptionShort}
             </p>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-              {categoryProducts.slice(0, 3).map((product) => (
-                <ProductCard
-                  key={product.id}
-                  id={product.id}
-                  name={product.name}
-                  category={getCategoryRu(product.info.category_id)}
-                  price={product.info.price}
-                  description={product.info.description}
-                  categorySlug={categoryUrl}
-                />
-              ))}
+            <div className='flex flex-col md:flex-row md:items-stretch gap-6'>
+              <div className='grid grid-cols-1 md:grid-cols-3 gap-6 flex-1 min-w-0'>
+                {categoryProducts.slice(0, 3).map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    category={getCategoryRu(product.info.category_id)}
+                    price={product.info.price}
+                    description={product.info.description}
+                    categorySlug={categoryUrl}
+                  />
+                ))}
+              </div>
+              {categoryUrl && (
+                <Link
+                  href={`/catalog/${categoryUrl}`}
+                  className='flex items-center justify-center shrink-0 w-12 h-12 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900 transition-colors self-center'
+                  aria-label={`Подробнее: ${category.ru}`}
+                >
+                  <ChevronRightIcon className='w-6 h-6' />
+                </Link>
+              )}
             </div>
-            {categoryUrl && (
-              <Link
-                href={`/catalog/${categoryUrl}`}
-                className='mt-6 inline-block text-gray-700 font-medium hover:text-gray-900 underline underline-offset-2'
-              >
-                Подробнее
-              </Link>
-            )}
           </section>
         );
       })}

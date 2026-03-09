@@ -1,10 +1,17 @@
 'use client';
 
 import { Card, CardBody, Button } from '@heroui/react';
-import Link from 'next/link';
-import { ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { Fragment } from 'react';
 import type { ProductType } from '@/app/constants/types/productTypes';
 import { categories } from '@/app/constants/types/categoryTypes';
+import BackToCatalogLink from '@/components/ui/BackToCatalogLink';
+import {
+  getProductFeaturePaths,
+  getFeaturePathsBySection,
+  getFeatureValueAtPath,
+  FEATURE_SECTION_LABELS,
+  keyLabelFromPath,
+} from '@/lib/productFeatureUtils';
 
 type ProductClientProps = {
   product: ProductType;
@@ -17,16 +24,9 @@ export default function ProductClient({
 }: ProductClientProps) {
   return (
     <>
-      {/* Back to category */}
-      <Button
-        as={Link}
-        href={`/catalog/${categorySlug}`}
-        variant='light'
-        startContent={<ArrowLeftIcon className='w-4 h-4' />}
-        className='-ml-2 mb-6 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10'
-      >
-        Назад в каталог
-      </Button>
+      <BackToCatalogLink href={`/catalog/${categorySlug}`}>
+        В категорию
+      </BackToCatalogLink>
 
       {/* Product details — HeroUI Card to match catalog ProductCard */}
       <Card className='overflow-hidden transition-shadow'>
@@ -78,18 +78,92 @@ export default function ProductClient({
                 </Button>
               </div>
 
-              <div className='mt-8 pt-8 border-t border-gray-200 dark:border-gray-700'>
-                <h2 className='text-lg font-semibold mb-4'>Детали продукта</h2>
-                <ul className='space-y-2 text-gray-600 dark:text-gray-300 text-sm'>
-                  {product.info.featuresShort.map((feature, index) => (
-                    <li key={index}>• {feature}</li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </CardBody>
       </Card>
+
+      {/* Product specs table — same design as comparator */}
+      <div className='mt-12'>
+        <h2 className='text-2xl font-semibold text-gray-900 mb-6'>
+          Характеристики
+        </h2>
+        <Card className='border-none shadow-xl rounded-2xl overflow-hidden'>
+          <div className='overflow-x-auto'>
+            <table className='w-full'>
+              <thead>
+                <tr className='bg-gray-50 border-b border-gray-200'>
+                  <th className='p-6 text-left font-semibold text-gray-600 w-48'>
+                    Характеристика
+                  </th>
+                  <th className='p-6 text-left font-semibold text-gray-900 min-w-[200px]'>
+                    Значение
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className='border-b border-gray-100 hover:bg-gray-50/50'>
+                  <td className='p-6 font-medium text-gray-600'>Цена</td>
+                  <td className='p-6'>
+                    <span className='text-xl font-bold text-blue-600'>
+                      {product.info.price}
+                    </span>
+                  </td>
+                </tr>
+                <tr className='border-b border-gray-100 hover:bg-gray-50/50'>
+                  <td className='p-6 font-medium text-gray-600'>Категория</td>
+                  <td className='p-6 text-gray-700'>
+                    {categories.find((c) => c.id === product.info.category_id)?.ru ?? ''}
+                  </td>
+                </tr>
+                <tr className='border-b border-gray-100 hover:bg-gray-50/50'>
+                  <td className='p-6 font-medium text-gray-600'>Описание</td>
+                  <td className='p-6 text-gray-700'>
+                    {product.info.description}
+                  </td>
+                </tr>
+                {getFeaturePathsBySection(getProductFeaturePaths(product)).map(
+                  ([section, paths]) => {
+                    const sectionLabel =
+                      FEATURE_SECTION_LABELS[section] ?? section;
+                    return (
+                      <Fragment key={section}>
+                        <tr className='border-b border-gray-100 hover:bg-gray-50/50'>
+                          <td
+                            colSpan={2}
+                            className='p-6 font-semibold text-gray-900'
+                          >
+                            {sectionLabel}
+                          </td>
+                        </tr>
+                        {paths.map((path) => {
+                          const value = getFeatureValueAtPath(
+                            product.info.features,
+                            path
+                          );
+                          return (
+                            <tr
+                              key={path}
+                              className='border-b border-gray-100 hover:bg-gray-50/50'
+                            >
+                              <td className='p-4 sm:p-6 pl-8 font-medium text-gray-600'>
+                                {keyLabelFromPath(path)}
+                              </td>
+                              <td className='p-4 sm:p-6 text-gray-700'>
+                                {value ?? '—'}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </Fragment>
+                    );
+                  }
+                )}
+              </tbody>
+            </table>
+          </div>
+        </Card>
+      </div>
     </>
   );
 }

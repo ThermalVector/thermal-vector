@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardBody, CardFooter, Button } from '@heroui/react';
+import { Card, CardBody } from '@heroui/react';
 import Link from 'next/link';
 
 type ProductCardProps = {
@@ -25,7 +25,7 @@ export default function ProductCard({
     ? `/catalog/${categorySlug}/${id}`
     : `/catalog/${id}`;
   return (
-    <Card className='hover:shadow-xl transition-shadow'>
+    <Card className='hover:shadow-xl transition-shadow border border-gray-300'>
       <CardBody className='p-0'>
         <Link href={productHref} className='block'>
           <div className='relative h-48 bg-gray-200'>
@@ -43,17 +43,6 @@ export default function ProductCard({
           </div>
         </Link>
       </CardBody>
-      <CardFooter className='border-t dark:border-gray-700'>
-        <Button
-          as={Link}
-          href={productHref}
-          color='primary'
-          className='w-full'
-          size='md'
-        >
-          Подробнее
-        </Button>
-      </CardFooter>
     </Card>
   );
 }
