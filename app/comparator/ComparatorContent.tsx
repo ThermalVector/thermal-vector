@@ -3,7 +3,6 @@
 import {
   Card,
   CardBody,
-  CardHeader,
   Select,
   SelectItem,
   Button,
@@ -14,21 +13,153 @@ import {
   TrashIcon,
   ChevronDownIcon,
 } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useState, useMemo, Fragment } from 'react';
 import Link from 'next/link';
 import Container from '@/components/ui/layout/Container';
-import { products, type Product } from '@/app/constants/products';
+import type {
+  ProductType,
+  productFeature,
+} from '@/app/constants/types/productTypes';
+import { getProductsByCategory } from '@/app/constants/productMethods';
+import {
+  categories,
+  CategoryType,
+} from '@/app/constants/types/categoryTypes';
+
+const DEFAULT_CATEGORY_ID = CategoryType.thermalCore;
+
+/** Flatten nested features object into path -> string (only string values). */
+function flattenFeatures(
+  obj: Record<string, unknown>,
+  prefix = ''
+): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const key of Object.keys(obj)) {
+    const value = obj[key];
+    const path = prefix ? `${prefix}.${key}` : key;
+    if (typeof value === 'string') {
+      out[path] = value;
+    } else if (
+      value != null &&
+      typeof value === 'object' &&
+      !Array.isArray(value)
+    ) {
+      Object.assign(
+        out,
+        flattenFeatures(value as Record<string, unknown>, path)
+      );
+    }
+  }
+  return out;
+}
+
+/** Get value at dot path from features, or undefined if missing. */
+function getFeatureValueAtPath(
+  features: productFeature,
+  path: string
+): string | undefined {
+  const parts = path.split('.');
+  let current: unknown = features;
+  for (const part of parts) {
+    if (current == null || typeof current !== 'object') return undefined;
+    current = (current as Record<string, unknown>)[part];
+  }
+  return typeof current === 'string' ? current : undefined;
+}
+
+/** All unique feature paths across the given products, sorted. */
+function getAllFeaturePaths(products: ProductType[]): string[] {
+  const set = new Set<string>();
+  for (const p of products) {
+    const flat = flattenFeatures(
+      p.info.features as unknown as Record<string, unknown>
+    );
+    Object.keys(flat).forEach((k) => set.add(k));
+  }
+  return Array.from(set).sort();
+}
+
+/** Human-readable label for feature path (section + key). */
+const FEATURE_SECTION_LABELS: Record<string, string> = {
+  item: 'Модуль',
+  imageEffect: 'Изображение',
+  general: 'Общие',
+  interface: 'Интерфейс',
+  measurementTemperature: 'Температура',
+  network: 'Сеть',
+  opticalModule: 'Оптика',
+  ptz: 'PTZ',
+  videoAudio: 'Видео/аудио',
+  smartFunction: 'Умные функции',
+};
+
+function featurePathToLabel(path: string): string {
+  const [section, ...rest] = path.split('.');
+  const sectionLabel =
+    FEATURE_SECTION_LABELS[section] ?? section;
+  const key = rest.join('.');
+  const keyLabel = key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase()).trim();
+  return key ? `${sectionLabel} — ${keyLabel}` : sectionLabel;
+}
+
+/** Sub-key label only (e.g. "item.resolution" -> "Resolution"). */
+function keyLabelFromPath(path: string): string {
+  const parts = path.split('.');
+  const key = parts.length > 1 ? parts.slice(1).join('.') : path;
+  return key.replace(/([A-Z])/g, ' $1').replace(/^./, (s) => s.toUpperCase()).trim();
+}
+
+/** Group feature paths by section, ordered by FEATURE_SECTION_LABELS then rest. */
+function getFeaturePathsBySection(paths: string[]): [string, string[]][] {
+  const sectionOrder = Object.keys(FEATURE_SECTION_LABELS);
+  const bySection = new Map<string, string[]>();
+  for (const path of paths) {
+    const section = path.split('.')[0];
+    if (!bySection.has(section)) bySection.set(section, []);
+    bySection.get(section)!.push(path);
+  }
+  const ordered: [string, string[]][] = [];
+  for (const section of sectionOrder) {
+    const group = bySection.get(section);
+    if (group?.length) ordered.push([section, group.sort()]);
+  }
+  for (const [section, group] of bySection) {
+    if (!sectionOrder.includes(section)) ordered.push([section, group.sort()]);
+  }
+  return ordered;
+}
 
 export default function ComparatorContent() {
-  const [selectedProducts, setSelectedProducts] = useState<(Product | null)[]>([
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number>(
+    DEFAULT_CATEGORY_ID
+  );
+  const [selectedProducts, setSelectedProducts] = useState<(ProductType | null)[]>([
     null,
     null,
     null,
   ]);
   const [compareStarted, setCompareStarted] = useState(false);
+  const [showAdvancedComparison, setShowAdvancedComparison] = useState(false);
+
+  const categoryProducts = useMemo(
+    () => getProductsByCategory(selectedCategoryId),
+    [selectedCategoryId]
+  );
+
+  const handleCategoryChange = (keys: 'all' | Set<string | number>) => {
+    const value = Array.from(keys)[0];
+    const id = typeof value === 'number' ? value : Number(value);
+    if (!Number.isNaN(id) && categories.some((c) => c.id === id)) {
+      setSelectedCategoryId(id);
+      setSelectedProducts([null, null, null]);
+      setCompareStarted(false);
+      setShowAdvancedComparison(false);
+    }
+  };
 
   const handleProductSelect = (index: number, productId: string) => {
-    const product = products.find((p) => p.id === parseInt(productId)) || null;
+    const product =
+      categoryProducts.find((p) => p.id === parseInt(productId)) || null;
     const newSelected = [...selectedProducts];
     newSelected[index] = product;
     setSelectedProducts(newSelected);
@@ -49,6 +180,7 @@ export default function ComparatorContent() {
   const handleReset = () => {
     setSelectedProducts([null, null, null]);
     setCompareStarted(false);
+    setShowAdvancedComparison(false);
   };
 
   const hasSelection = selectedProducts.some((p) => p !== null);
@@ -84,6 +216,56 @@ export default function ComparatorContent() {
                   </h2>
                 </div>
 
+                {/* Category dropdown */}
+                <div className='mb-8'>
+                  <label className='block text-sm font-medium text-gray-600 mb-3'>
+                    Категория
+                  </label>
+                  <Select
+                    aria-label='Выберите категорию'
+                    selectedKeys={[String(selectedCategoryId)]}
+                    onSelectionChange={handleCategoryChange}
+                    className='max-w-md'
+                    size='lg'
+                    radius='lg'
+                    variant='bordered'
+                    selectorIcon={
+                      <ChevronDownIcon className='w-5 h-5 text-gray-500' />
+                    }
+                    classNames={{
+                      base: 'max-w-md',
+                      trigger:
+                        'bg-white border-2 border-gray-200 hover:border-blue-500 transition-colors rounded-xl',
+                      value: 'text-gray-900 font-medium pl-3',
+                      innerWrapper: 'px-3',
+                      listbox: 'bg-white rounded-xl',
+                      popoverContent: [
+                        'bg-white border border-gray-200 shadow-xl rounded-xl',
+                        'max-h-[300px] overflow-y-auto',
+                      ].join(' '),
+                      selectorIcon: 'hidden',
+                      listboxWrapper:
+                        'px-4 py-3 data-[hover=true]:bg-gray-50 data-[selectable=true]:focus:bg-gray-50 rounded-lg',
+                    }}
+                    popoverProps={{
+                      shouldBlockScroll: false,
+                      placement: 'bottom',
+                      offset: 5,
+                    }}
+                  >
+                    {categories.map((category) => (
+                      <SelectItem
+                        key={category.id}
+                        textValue={category.ru}
+                        className='data-[selected=true]:bg-blue-50 data-[selected=true]:text-blue-700'
+                      >
+                        {category.ru}
+                      </SelectItem>
+                    ))}
+                  </Select>
+                </div>
+
+                {/* Product dropdowns — only show when category is selected */}
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
                   {[0, 1, 2].map((index) => (
                     <div key={index} className='space-y-3'>
@@ -144,29 +326,34 @@ export default function ComparatorContent() {
                           offset: 5,
                         }}
                       >
-                        {products
+                        {categoryProducts
                           .filter(
                             (p) =>
                               !selectedProducts.includes(p) ||
                               selectedProducts[index]?.id === p.id,
                           )
-                          .map((product) => (
-                            <SelectItem
-                              key={product.id}
-                              textValue={product.name}
-                              // Remove any default icon classes
-                              className='data-[selected=true]:bg-blue-50 data-[selected=true]:text-blue-700'
-                            >
-                              <div className='flex flex-col'>
-                                <span className='font-medium text-gray-900'>
-                                  {product.name}
-                                </span>
-                                <span className='text-sm text-gray-500'>
-                                  {product.category} • {product.price}
-                                </span>
-                              </div>
-                            </SelectItem>
-                          ))}
+                          .map((product) => {
+                            const categoryRu =
+                              categories.find(
+                                (c) => c.id === product.info.category_id
+                              )?.ru ?? '';
+                            return (
+                              <SelectItem
+                                key={product.id}
+                                textValue={product.name}
+                                className='data-[selected=true]:bg-blue-50 data-[selected=true]:text-blue-700'
+                              >
+                                <div className='flex flex-col'>
+                                  <span className='font-medium text-gray-900'>
+                                    {product.name}
+                                  </span>
+                                  <span className='text-sm text-gray-500'>
+                                    {categoryRu} • {product.info.price}
+                                  </span>
+                                </div>
+                              </SelectItem>
+                            );
+                          })}
                       </Select>
 
                       {selectedProducts[index] && (
@@ -175,8 +362,12 @@ export default function ComparatorContent() {
                             {selectedProducts[index]?.name}
                           </p>
                           <p className='text-xs text-blue-700 mt-1'>
-                            {selectedProducts[index]?.category} •{' '}
-                            {selectedProducts[index]?.price}
+                            {categories.find(
+                              (c) =>
+                                c.id === selectedProducts[index]?.info
+                                  .category_id
+                            )?.ru ?? ''}{' '}
+                            • {selectedProducts[index]?.info.price}
                           </p>
                         </div>
                       )}
@@ -235,7 +426,12 @@ export default function ComparatorContent() {
                                 key={index}
                                 className='p-6 text-left font-semibold text-gray-900 min-w-[200px]'
                               >
-                                {product.name}
+                                <Link
+                                  href={`/catalog/${product.id}`}
+                                  className='text-blue-600 hover:text-blue-800 hover:underline'
+                                >
+                                  {product.name}
+                                </Link>
                               </th>
                             ),
                         )}
@@ -250,7 +446,7 @@ export default function ComparatorContent() {
                             product && (
                               <td key={index} className='p-6'>
                                 <span className='text-xl font-bold text-blue-600'>
-                                  {product.price}
+                                  {product.info.price}
                                 </span>
                               </td>
                             ),
@@ -266,7 +462,9 @@ export default function ComparatorContent() {
                           (product, index) =>
                             product && (
                               <td key={index} className='p-6 text-gray-700'>
-                                {product.category}
+                                {categories.find(
+                                  (c) => c.id === product.info.category_id
+                                )?.ru ?? ''}
                               </td>
                             ),
                         )}
@@ -281,7 +479,7 @@ export default function ComparatorContent() {
                           (product, index) =>
                             product && (
                               <td key={index} className='p-6 text-gray-700'>
-                                {product.description}
+                                {product.info.description}
                               </td>
                             ),
                         )}
@@ -297,17 +495,19 @@ export default function ComparatorContent() {
                             product && (
                               <td key={index} className='p-4 sm:p-6'>
                                 <ul className='space-y-2'>
-                                  {product.features.map((feature, i) => (
-                                    <li
-                                      key={i}
-                                      className='flex items-start gap-2 text-sm text-gray-600'
-                                    >
-                                      <span className='text-blue-500 font-bold text-lg leading-none'>
-                                        •
-                                      </span>
-                                      <span>{feature}</span>
-                                    </li>
-                                  ))}
+                                  {product.info.featuresShort.map(
+                                    (feature, i) => (
+                                      <li
+                                        key={i}
+                                        className='flex items-start gap-2 text-sm text-gray-600'
+                                      >
+                                        <span className='text-blue-500 font-bold text-lg leading-none'>
+                                          •
+                                        </span>
+                                        <span>{feature}</span>
+                                      </li>
+                                    )
+                                  )}
                                 </ul>
                               </td>
                             ),
@@ -323,9 +523,20 @@ export default function ComparatorContent() {
                     <Button
                       size='lg'
                       className='w-full text-lg font-medium bg-[#2a2a2a] hover:bg-[#3a3a3a] text-white transition-colors px-4 py-4 sm:py-3 shadow-md hover:shadow-lg border-none'
-                      onPress={() => setCompareStarted(false)}
+                      onPress={() => {
+                        setCompareStarted(false);
+                        setShowAdvancedComparison(false);
+                      }}
                     >
                       Новое сравнение
+                    </Button>
+                    <Button
+                      size='lg'
+                      variant='flat'
+                      className='w-full text-lg font-medium text-blue-600 hover:bg-blue-50'
+                      onPress={() => setShowAdvancedComparison((v) => !v)}
+                    >
+                      {showAdvancedComparison ? 'Скрыть подробное сравнение' : 'Подробнее'}
                     </Button>
                     <Button
                       as={Link}
@@ -338,6 +549,98 @@ export default function ComparatorContent() {
                   </div>
                 </div>
               </Card>
+
+              {/* Advanced comparison — separate section like "Результаты сравнения" */}
+              {showAdvancedComparison && (() => {
+                const productsToCompare = selectedProducts.filter(
+                  (p): p is ProductType => p != null
+                );
+                const featurePaths = getAllFeaturePaths(productsToCompare);
+                const sections = getFeaturePathsBySection(featurePaths);
+                return (
+                  <>
+                    <div className='mt-12'>
+                      <h2 className='text-2xl font-semibold text-gray-900 mb-8 text-center'>
+                        Подробное сравнение характеристик
+                      </h2>
+                    </div>
+                    <Card className='border-none shadow-xl rounded-2xl overflow-hidden'>
+                      <div className='overflow-x-auto'>
+                        <table className='w-full table-fixed'>
+                          <colgroup>
+                            <col style={{ width: '12rem' }} />
+                            {productsToCompare.map((_, i) => (
+                              <col key={i} />
+                            ))}
+                          </colgroup>
+                          <thead>
+                            <tr className='bg-gray-50 border-b border-gray-200'>
+                              <th className='p-6 text-left font-semibold text-gray-600 break-words'>
+                                Характеристика
+                              </th>
+                              {productsToCompare.map((product) => (
+                                <th
+                                  key={product.id}
+                                  className='p-6 text-left font-semibold text-gray-900 break-words'
+                                >
+                                  <Link
+                                    href={`/catalog/${product.id}`}
+                                    className='text-blue-600 hover:text-blue-800 hover:underline break-words'
+                                  >
+                                    {product.name}
+                                  </Link>
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {sections.map(([section, paths]) => {
+                              const sectionLabel =
+                                FEATURE_SECTION_LABELS[section] ?? section;
+                              return (
+                                <Fragment key={section}>
+                                  <tr className='border-b border-gray-100 hover:bg-gray-50/50'>
+                                    <td
+                                      colSpan={1 + productsToCompare.length}
+                                      className='p-6 font-semibold text-gray-900 break-words'
+                                    >
+                                      {sectionLabel}
+                                    </td>
+                                  </tr>
+                                  {paths.map((path) => (
+                                    <tr
+                                      key={path}
+                                      className='border-b border-gray-100 hover:bg-gray-50/50'
+                                    >
+                                      <td className='p-4 sm:p-6 pl-8 font-medium text-gray-600 break-words'>
+                                        {keyLabelFromPath(path)}
+                                      </td>
+                                      {productsToCompare.map((product) => {
+                                        const value = getFeatureValueAtPath(
+                                          product.info.features,
+                                          path
+                                        );
+                                        return (
+                                          <td
+                                            key={product.id}
+                                            className='p-4 sm:p-6 text-gray-700 break-words'
+                                          >
+                                            {value ?? '-'}
+                                          </td>
+                                        );
+                                      })}
+                                    </tr>
+                                  ))}
+                                </Fragment>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </Card>
+                  </>
+                );
+              })()}
             </div>
           </Container>
         </section>

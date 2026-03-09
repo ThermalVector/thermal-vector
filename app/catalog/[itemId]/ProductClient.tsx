@@ -3,10 +3,11 @@
 import { Card, CardBody, Button } from '@heroui/react';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
-import type { Product } from '@/app/constants';
+import type { ProductType } from '@/app/constants/types/productTypes';
+import { categories } from '@/app/constants/types/categoryTypes';
 
 type ProductClientProps = {
-  product: Product;
+  product: ProductType;
 };
 
 export default function ProductClient({ product }: ProductClientProps) {
@@ -30,9 +31,9 @@ export default function ProductClient({ product }: ProductClientProps) {
             {/* Product image — same placeholder as ProductCard */}
             <div className='md:w-1/2'>
               <div className='relative h-96 md:h-full bg-gray-200 flex items-center justify-center text-gray-400'>
-                {product.imageUrl ? (
+                {product.info.imageUrl ? (
                   <img
-                    src={product.imageUrl}
+                    src={product.info.imageUrl}
                     alt={product.name}
                     className='w-full h-full object-cover'
                   />
@@ -46,19 +47,19 @@ export default function ProductClient({ product }: ProductClientProps) {
             <div className='md:w-1/2 p-6 md:p-8'>
               <div className='mb-4'>
                 <span className='text-sm text-blue-600 font-semibold uppercase tracking-wide'>
-                  {product.category}
+                  {categories.find((c) => c.id === product.info.category_id)?.ru ?? ''}
                 </span>
                 <h1 className='text-3xl md:text-4xl font-bold mt-2 mb-4'>
                   {product.name}
                 </h1>
                 <p className='text-lg text-gray-600 dark:text-gray-300 mb-6'>
-                  {product.description}
+                  {product.info.description}
                 </p>
               </div>
 
               <div className='mb-6'>
                 <span className='text-3xl font-bold text-blue-600'>
-                  {product.price}
+                  {product.info.price}
                 </span>
               </div>
 
@@ -76,7 +77,7 @@ export default function ProductClient({ product }: ProductClientProps) {
               <div className='mt-8 pt-8 border-t border-gray-200 dark:border-gray-700'>
                 <h2 className='text-lg font-semibold mb-4'>Детали продукта</h2>
                 <ul className='space-y-2 text-gray-600 dark:text-gray-300 text-sm'>
-                  {product.features.map((feature, index) => (
+                  {product.info.featuresShort.map((feature, index) => (
                     <li key={index}>• {feature}</li>
                   ))}
                 </ul>

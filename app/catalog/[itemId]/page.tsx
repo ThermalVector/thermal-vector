@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getProductById } from '@/app/constants/products';
+import { getProductById } from '@/app/constants/productMethods';
 import ProductClient from './ProductClient';
 
 export async function generateStaticParams() {
@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   return {
     title: `${product.name} | Thermal Vector`,
-    description: product.description,
+    description: product.info.featuresShort,
   };
 }
 
@@ -34,7 +34,7 @@ export default async function ItemPage({
 }: {
   params: Promise<{ itemId: string }>;
 }) {
-  const { itemId } = await params; 
+  const { itemId } = await params;
   const product = getProductById(parseInt(itemId));
 
   // If product doesn't exist, show 404
