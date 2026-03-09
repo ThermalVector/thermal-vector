@@ -8,15 +8,19 @@ import { categories } from '@/app/constants/types/categoryTypes';
 
 type ProductClientProps = {
   product: ProductType;
+  categorySlug: string;
 };
 
-export default function ProductClient({ product }: ProductClientProps) {
+export default function ProductClient({
+  product,
+  categorySlug,
+}: ProductClientProps) {
   return (
     <>
-      {/* Back to catalog */}
+      {/* Back to category */}
       <Button
         as={Link}
-        href='/catalog'
+        href={`/catalog/${categorySlug}`}
         variant='light'
         startContent={<ArrowLeftIcon className='w-4 h-4' />}
         className='-ml-2 mb-6 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-white/10'

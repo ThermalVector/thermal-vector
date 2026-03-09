@@ -1,5 +1,11 @@
+'use client';
+
+import Link from 'next/link';
 import { products } from '@/app/constants';
-import { categories } from '@/app/constants/types/categoryTypes';
+import {
+  categories,
+  getCategoryUrlById,
+} from '@/app/constants/types/categoryTypes';
 import ProductCard from '@/components/ui/cards/ProductCard';
 
 // аналог - https://security.thermeyetec.com/product/
@@ -22,28 +28,40 @@ export default function CatalogPage() {
         тепловизионные продукты и решения и создает более безопасные и
         эффективные условия жизни и работы.
       </p>
-      <h2 className='text-2xl font-semibold text-gray-800 mb-8'>
-        Тепловизионные решения для обеспечения безопасности
-      </h2>
-      {productsByCategory.map(({ category, products: categoryProducts }) => (
-        <section key={category.id} className='mb-12'>
-          <h2 className='text-2xl font-semibold text-gray-800 mb-6'>
-            {category.ru}
-          </h2>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-            {categoryProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                id={product.id}
-                name={product.name}
-                category={getCategoryRu(product.info.category_id)}
-                price={product.info.price}
-                description={product.info.description}
-              />
-            ))}
-          </div>
-        </section>
-      ))}
+      {productsByCategory.map(({ category, products: categoryProducts }) => {
+        const categoryUrl = getCategoryUrlById(category.id);
+        return (
+          <section key={category.id} className='mb-12'>
+            <h2 className='text-2xl font-semibold text-gray-800 mb-2'>
+              {category.ru}
+            </h2>
+            <p className='text-sm text-gray-600 mb-6'>
+              {category.descriptionShort}
+            </p>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+              {categoryProducts.slice(0, 3).map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  category={getCategoryRu(product.info.category_id)}
+                  price={product.info.price}
+                  description={product.info.description}
+                  categorySlug={categoryUrl}
+                />
+              ))}
+            </div>
+            {categoryUrl && (
+              <Link
+                href={`/catalog/${categoryUrl}`}
+                className='mt-6 inline-block text-gray-700 font-medium hover:text-gray-900 underline underline-offset-2'
+              >
+                Подробнее
+              </Link>
+            )}
+          </section>
+        );
+      })}
     </div>
   );
 }

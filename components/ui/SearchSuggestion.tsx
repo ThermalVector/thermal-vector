@@ -4,6 +4,7 @@ import { useState, useMemo, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import { products } from '@/app/constants/products';
+import { getCategoryUrlById } from '@/app/constants/types/categoryTypes';
 
 export default function SearchSuggestion() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,14 @@ export default function SearchSuggestion() {
   const sortedProductNames = useMemo(
     () =>
       [...products]
-        .map((p) => ({ id: p.id, name: p.name }))
+        .map((p) => ({
+          id: p.id,
+          name: p.name,
+          categorySlug: getCategoryUrlById(p.info.category_id),
+        }))
+        .filter((p): p is { id: number; name: string; categorySlug: string } =>
+          Boolean(p.categorySlug)
+        )
         .sort((a, b) => a.name.localeCompare(b.name)),
     []
   );
@@ -58,10 +66,10 @@ export default function SearchSuggestion() {
               {filteredProductNames.length === 0 ? (
                 <li className='px-4 py-2 text-gray-400'>Ничего не найдено</li>
               ) : (
-                filteredProductNames.map(({ id, name }) => (
+                filteredProductNames.map(({ id, name, categorySlug }) => (
                   <li key={id}>
                     <Link
-                      href={`/catalog/${id}`}
+                      href={`/catalog/${categorySlug}/${id}`}
                       className='block px-4 py-2 text-white hover:bg-gray-700 transition-colors'
                       onMouseDown={(e) => e.preventDefault()}
                     >

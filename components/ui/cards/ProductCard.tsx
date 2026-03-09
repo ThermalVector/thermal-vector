@@ -9,6 +9,8 @@ type ProductCardProps = {
   category: string;
   price: string;
   description?: string;
+  /** Category URL slug for product link, e.g. "thermal-cores". When set, link is /catalog/{categorySlug}/{id} */
+  categorySlug?: string;
 };
 
 export default function ProductCard({
@@ -17,11 +19,15 @@ export default function ProductCard({
   category,
   price,
   description,
+  categorySlug,
 }: ProductCardProps) {
+  const productHref = categorySlug
+    ? `/catalog/${categorySlug}/${id}`
+    : `/catalog/${id}`;
   return (
     <Card className='hover:shadow-xl transition-shadow'>
       <CardBody className='p-0'>
-        <Link href={`/catalog/${id}`} className='block'>
+        <Link href={productHref} className='block'>
           <div className='relative h-48 bg-gray-200'>
             <div className='absolute inset-0 flex items-center justify-center text-gray-400'>
               Изображение {name}
@@ -34,17 +40,13 @@ export default function ProductCard({
                 {description ?? '\u00A0'}
               </p>
             </div>
-            <div className='flex justify-between items-center'>
-              <span className='text-sm text-gray-500'>{category}</span>
-              <span className='text-xl font-bold text-blue-600'>{price}</span>
-            </div>
           </div>
         </Link>
       </CardBody>
       <CardFooter className='border-t dark:border-gray-700'>
         <Button
           as={Link}
-          href={`/catalog/${id}`}
+          href={productHref}
           color='primary'
           className='w-full'
           size='md'

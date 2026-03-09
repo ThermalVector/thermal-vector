@@ -24,6 +24,7 @@ import { getProductsByCategory } from '@/app/constants/productMethods';
 import {
   categories,
   CategoryType,
+  getCategoryUrlById,
 } from '@/app/constants/types/categoryTypes';
 
 const DEFAULT_CATEGORY_ID = CategoryType.thermalCore;
@@ -427,7 +428,16 @@ export default function ComparatorContent() {
                                 className='p-6 text-left font-semibold text-gray-900 min-w-[200px]'
                               >
                                 <Link
-                                  href={`/catalog/${product.id}`}
+                                  href={
+                                    (() => {
+                                      const slug = getCategoryUrlById(
+                                        product.info.category_id
+                                      );
+                                      return slug
+                                        ? `/catalog/${slug}/${product.id}`
+                                        : '/catalog';
+                                    })()
+                                  }
                                   className='text-blue-600 hover:text-blue-800 hover:underline'
                                 >
                                   {product.name}
@@ -584,7 +594,16 @@ export default function ComparatorContent() {
                                   className='p-6 text-left font-semibold text-gray-900 break-words'
                                 >
                                   <Link
-                                    href={`/catalog/${product.id}`}
+                                    href={
+                                      (() => {
+                                        const slug = getCategoryUrlById(
+                                          product.info.category_id
+                                        );
+                                        return slug
+                                          ? `/catalog/${slug}/${product.id}`
+                                          : '/catalog';
+                                      })()
+                                    }
                                     className='text-blue-600 hover:text-blue-800 hover:underline break-words'
                                   >
                                     {product.name}

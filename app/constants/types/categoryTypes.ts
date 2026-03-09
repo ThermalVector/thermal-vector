@@ -5,46 +5,69 @@ export enum CategoryType {
   lens = 4
 }
 
+export const categoryURL: { category: CategoryType; url: string }[] = [
+  {
+    category: CategoryType.thermalCore,
+    url: 'thermal-cores'
+  },
+  {
+    category: CategoryType.thermalSecurityCamera,
+    url: 'thermal-security-cameras'
+  },
+  {
+    category: CategoryType.thermographyCamera,
+    url: 'thermography-cameras'
+  },
+  {
+    category: CategoryType.lens,
+    url: 'lenses'
+  },
+];
+
+export function getCategoryUrlById(categoryId: number): string | undefined {
+  return categoryURL.find((c) => c.category === categoryId)?.url;
+}
+
+export function getCategoryIdByUrl(slug: string): number | undefined {
+  const entry = categoryURL.find((c) => c.url === slug);
+  return entry ? entry.category : undefined;
+}
+
 export type Category = {
     id: number,
     ru: string,
     descriptionShort: string,
     descriptionLong: string,
     application: string,
-    dataOutput: string,
 };
 
 export const categories: Array<Category> = [
   {
     id: CategoryType.thermalCore,
     ru: "Тепловизионные модули",
-    descriptionShort: "Серде любого тепловизионного продукта",
-    descriptionLong: "Серде любого тепловизионного продукта",
-    application: "You are building a custom drone, creating a specialized handheld tool, or integrating imaging into an existing machine",
-    dataOutput: ""
+    descriptionShort: "Сердце любого тепловизионного продукта",
+    descriptionLong: "Тепловизионные модули (ядра) — компактные OEM-решения на базе неохлаждаемых микроболометров (VOx, типичный шаг пикселя 12 мкм). Поддерживают разрешения от 384×288 до 640×512 и выше, интерфейсы CVBS, USB, HDMI и MAVLink для интеграции с БПЛА. Низкое энергопотребление (порядка 3 Вт) и защита IP53 позволяют применять их в полевых условиях. Чувствительность NETD до 40 мК обеспечивает уверенное обнаружение тепловых целей на расстояниях от сотен метров до нескольких километров в зависимости от объектива и условий.",
+    application: "Интеграция в кастомные дроны и БПЛА для инспекции ЛЭП, кровель, трубопроводов и фотоэлектрических систем; создание портативных тепловизоров и ручных приборов; встраивание тепловидения в промышленное и транспортное оборудование. Применяются в поисково-спасательных операциях, мониторинге периметра и прогнозном обслуживании. Доступны SDK и средства разработки для быстрой интеграции в собственные системы.",
   },
   {
     id: CategoryType.thermalSecurityCamera,
     ru: "Тепловизионные камеры слежения",
     descriptionShort: "Передовые технологии в обеспечении безопасности",
-    descriptionLong: "Thermal security cameras are optimized for detecting motion and heat signatures in security scenarios, offering lower resolution and no, or limited, temperature data. Used for surveillance (detecting intruders/hot spots)",
-    application: "Security cameras monitor perimeters, smoke, or total darkness",
-    dataOutput: "Security cameras often only display relative heat differences"
+    descriptionLong: "Тепловизионные камеры слежения оптимизированы для обнаружения движения и тепловых следов в сценариях безопасности: они обеспечивают более низкое разрешение и не дают или дают ограниченные данные о температуре. Работают 24/7 в любую погоду и при полном отсутствии освещения — в тумане, дыму, за листвой. Современные системы поддерживают аналитику на крае (AI): классификация «человек / транспорт», отсечение ложных срабатываний от животных и погоды, видеоподтверждение тревог для приоритетного реагирования. Двухсенсорные решения (тепло + видимый спектр) повышают точность и снижают ложные срабатывания.",
+    application: "Охрана периметра коммерческих объектов, критической инфраструктуры, аэропортов, портов, железнодорожных узлов, ЦОД, исправительных учреждений и энергообъектов. Обнаружение людей и транспорта на сотни метров в темноте, тумане и сложных условиях видимости. Проактивная профилактика нарушений за счёт раннего обнаружения и видеофиксации. Опционально: радиометрия для выявления перегрева оборудования и горячих зон.",
   },
   {
     id: CategoryType.thermographyCamera,
     ru: "Тепловизионные камеры",
-    descriptionShort: "Современные системы для работы в экстремальнх условиях",
-    descriptionLong: "Thermography cameras (thermal imagers) are specialized, high-accuracy tools designed to measure precise temperatures (radiometric data) for predictive maintenance, building inspections, and industrial diagnostics. Used for measurement and diagnostics",
-    application: "Thermography cameras find hot spots in machinery, electrical failures, or thermal insulation gaps",
-    dataOutput: "Thermography cameras provide accurate, pixel-by-pixel temperature readings (radiometric data)"
+    descriptionShort: "Современные системы для работы в экстремальных условиях",
+    descriptionLong: "Термографические камеры (тепловизоры) — специализированные высокоточные инструменты с радиометрией: дают покомпонентные данные о температуре для прогнозного обслуживания, энергоаудита и промышленной диагностики. Высокая тепловая чувствительность (до 30 мК NETD), лазерный автофокус, Wi‑Fi и маршруты обследования упрощают полевые проверки. Интеграция с ПО анализа и отчётности позволяет вести тренды и формировать отчёты. Применяются для выявления теплопотерь, дефектов изоляции и кровли, неисправностей в электрощитах и механизмах до перехода в отказ.",
+    application: "Обследование зданий: теплопотери, дефекты кровли и изоляции, мониторинг систем отопления и вентиляции. Промышленная диагностика: горячие зоны в механизмах, перегруженные контакты и соединения, дефекты подшипников и приводов. Прогнозное обслуживание электрооборудования, трансформаторов и распределительных сетей. Контроль качества в производстве и научные исследования.",
   },
   {
     id: CategoryType.lens,
     ru: "Объективы",
     descriptionShort: "Высококачественные объективы для передачи самого качественного изображения",
-    descriptionLong: "",
-    application: "",
-    dataOutput: "",
+    descriptionLong: "Объективы для тепловидения рассчитаны на рабочий спектр LWIR (8–12 мкм) или MWIR (3,7–4,8 мкм) и обеспечивают резкое, однородное по полю изображение. Доступны варианты с разным полем зрения и фокусным расстоянием: широкоугольные для обзора и панорам, стандартные и телеобъективы для дальнего обнаружения и распознавания. Качественная оптика определяет дальность и точность тепловизионных систем — модулей и камер.",
+    application: "Подбор под задачу: широкий угол для обзора периметра и помещений, средний — для инспекций и диагностики, длиннофокусные — для дальней идентификации в охране и мониторинге. Замена и апгрейд объективов на тепловизорах и камерах для изменения поля зрения и дальности. Использование в промышленных, охранных и измерительных системах тепловидения.",
   }
 ]
