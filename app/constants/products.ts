@@ -2033,7 +2033,7 @@ export const products: ProductType[] = [
     info: {
       description: 'Dual Spectrum High Speed PTZ Camera',
       price: '9.999,00 ₽',
-      category_id: CategoryType.thermalSecurityCamera,
+      category_id: CategoryType.thermographyCamera,
       featuresShort: [
         'High image quality:12μm thermal sensor, 2MP 1/2.8” CMOS visible sensor',
         'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
@@ -2065,7 +2065,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2128,7 +2127,7 @@ export const products: ProductType[] = [
     info: {
       description: 'Dual Spectrum High Speed PTZ Camera',
       price: '9.999,00 ₽',
-      category_id: CategoryType.thermalSecurityCamera,
+      category_id: CategoryType.thermographyCamera,
       featuresShort: [
         'High image quality:12μm thermal sensor, 2MP 1/2.8” CMOS visible sensor',
         'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
@@ -2160,7 +2159,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2251,7 +2249,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2339,7 +2336,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2428,7 +2424,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2517,7 +2512,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2605,7 +2599,6 @@ export const products: ProductType[] = [
           imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
           uniformityCalibration: 'Manual/Auto shutter, background corrextion',
           imageProcess: 'AGC, IDE',
-          imageFusion: 'Support',
           palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
         },
         smartFunction: {
@@ -2744,6 +2737,1072 @@ export const products: ProductType[] = [
           reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
           size: '720mmx388mmx550mm',
           weight: '＜50Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 42,
+    name: 'YS3',
+    info: {
+      description: 'Mobile Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Light weight design;high speed rotation,low power consumption, easier installation',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '7 / 10 / 17 / 25 / 35',
+          fov: '36.4*27.7 / 25.9*19.6 / 25.9*19.6 15.4*11.6 / 10.5*7.9 / 7.5*5.6'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for YS3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20~+135℃',
+          accuracyMeasurement: '±8℃(± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines)',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.1°~100°/s',
+          tiltSpeed: '0.1°~80°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          powerSupply: 'DC9--36V,5A',
+          powerConsumption: '＜20W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '168mm*320mm*186mm',
+          weight: '＜5.5Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 43,
+    name: 'YS6',
+    info: {
+      description: 'Mobile Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Light weight design;high speed rotation,low power consumption, easier installation',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '10 / 17 / 25 / 35',
+          fov: '42*34 / 25.4*20.4 / 17.4*14 / 12.5*10'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20~+135℃',
+          accuracyMeasurement: '±8℃(± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines)',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.1°~100°/s',
+          tiltSpeed: '0.1°~80°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          powerSupply: 'DC9--36V,5A',
+          powerConsumption: '＜20W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '168mm*320mm*186mm',
+          weight: '＜5.5Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 44,
+    name: 'Y3',
+    info: {
+      description: 'Mobile Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Excellent image enhancement: AGC, HDR, 3DNR, IDE',
+        'Multiple temperature measurements: Point, line and area range etc',
+        'High accuracy temperature measurement range: ±2℃',
+        'Real-time video storage, Micro-SD up to 64GB',
+        'Support temperature measurement raw output',
+        'Integrated with shock absorber for vehicle-mounted',
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '25 / 35 / 50',
+          fov: '10.5*7.9 / 7.5*5.6 / 5.2*3.9'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for Y3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20~+135℃',
+          accuracyMeasurement: '±8℃(± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines)',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.1°~20°/s',
+          tiltSpeed: '0.1°~10°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          powerSupply: 'DC12V,3A',
+          powerConsumption: '＜30W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '212mm*398mm*245mm',
+          weight: '＜7Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 45,
+    name: 'Y6',
+    info: {
+      description: 'Mobile Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Excellent image enhancement: AGC, HDR, 3DNR, IDE',
+        'Multiple temperature measurements: Point, line and area range etc',
+        'High accuracy temperature measurement range: ±2℃',
+        'Real-time video storage, Micro-SD up to 64GB',
+        'Support temperature measurement raw output',
+        'Integrated with shock absorber for vehicle-mounted',
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '25 / 35 / 50',
+          fov: '17.4*14 / 12.5*10 / 8.7*7'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20~+135℃',
+          accuracyMeasurement: '±8℃(± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines)',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.1°~20°/s',
+          tiltSpeed: '0.1°~10°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          powerSupply: 'DC12V,3A',
+          powerConsumption: '＜30W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '212mm*398mm*245mm',
+          weight: '＜7Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 46,
+    name: 'E3',
+    info: {
+      description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'High image quality: 12μm thermal sensor, 2MP 1/2.8”CMOS visible sensor',
+        'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Rugged PTZ: Aluminium alloy material, waterproof aviation interface, anti-salt spray',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '75 / 100 mm',
+          fov: '3.5*2.6 / 2.64*1.98'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '6.1-317mm, 52X',
+          fov: '61.8-1.6(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for E3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -70°～+45°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.4°~40°/s',
+          tiltSpeed: '0.2°~10°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          wiper: 'Optional',
+          powerSupply: 'DC24V,5A',
+          powerConsumption: '＜20W',
+          workingTemperature: '-20°C~+60°C(customizated -40℃), <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '407mmx143mmx113mm',
+          weight: '＜20Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 47,
+    name: 'E6',
+    info: {
+      description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'High image quality: 12μm thermal sensor, 2MP 1/2.8”CMOS visible sensor',
+        'Powerful behavior analysis algorithm: Line crossing, intrusion, region entry & exit',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Rugged PTZ: Aluminium alloy material, waterproof aviation interface, anti-salt spray',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '75 / 100 mm',
+          fov: '5.8*4.7 / 4.4*3.5'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '6.1-317mm, 52X',
+          fov: '61.8-1.6(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -70°～+45°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.4°~40°/s',
+          tiltSpeed: '0.2°~10°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          wiper: 'Optional',
+          powerSupply: 'DC24V,5A',
+          powerConsumption: '＜20W',
+          workingTemperature: '-20°C~+60°C(customizated -40℃), <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '407mmx143mmx113mm',
+          weight: '＜20Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 48,
+    name: 'EL3',
+    info: {
+      description: 'Ultra Distance Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'High image quality: 12μm thermal sensor, 2MP 1/2.8”CMOS visible sensor',
+        'Thermal image focal lens up to 225mm',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Rugged PTZ: Aluminium alloy material, waterproof aviation interface, anti-salt spray',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '30-150mm / 30-180mm / 25-225mm',
+          fov: '8.75*6.57~1.76*1.32 / 8.75*6.57~1.46*1.10 / 10.47*7.87~1.18*0.88'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '15-775mmmm, 52X',
+          fov: '29.1-0.5(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for EL3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.01°~60°/s',
+          tiltSpeed: '0.01°~30°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          laserRangingIllumination: 'Optional',
+          powerSupply: 'DC48V,6.7A',
+          powerConsumption: '＜150W',
+          workingTemperature: '-20°C~+60°C(customizated -40℃), <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '457mm*784mm*433mm',
+          weight: '＜50Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 49,
+    name: 'EL6',
+    info: {
+      description: 'Ultra Distance Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'High image quality: 12μm thermal sensor, 2MP 1/2.8”CMOS visible sensor',
+        'Thermal image focal lens up to 225mm',
+        'Advanced AI algorithm: Multiple targets types detection and tracking',
+        'Excellent image enhancement: AGC, IDE',
+        'Rugged PTZ: Aluminium alloy material, waterproof aviation interface, anti-salt spray',
+        'Superior environmental adaptability: Applicable for extreme weather including darkness, rain, fog, smog and etc.',
+        'Complete customizability: Laser range finder, laser illuminator, radar in option'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '30-150mm / 30-180mm / 25-225mm',
+          fov: '14.59*11.69~2.93*2.35 / 14.59*11.69~2.44*1.96 / 17.46*14~1.96*1.5'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '15-775mmmm, 52X',
+          fov: '29.1-0.5(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -90°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.01°~60°/s',
+          tiltSpeed: '0.01°~30°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          laserRangingIllumination: 'Optional',
+          powerSupply: 'DC48V,6.7A',
+          powerConsumption: '＜150W',
+          workingTemperature: '-20°C~+60°C(customizated -40℃), <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: '457mm*784mm*433mm',
+          weight: '＜50Kg'
+        }
+      },
+    }
+  },
+  {
+    id: 50,
+    name: 'CC3',
+    info: {
+      description: 'Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Built-in high sensitivity infrared thermal camera realizes clear infrared images without any light, perfect for dark night voyage',
+        'Design of the magnetic composite sucker, built-in large capacity battery, simple operation with the one-key deployment',
+        'Real time WiFi data transmission',
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '7 / 10 / 17 / 25 / 35 mm',
+          fov: '36.4*27.7 / 25.9*19.6 / 15.4*11.6 / 10.5*7.9 / 7.5*5.6'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+          irRange: '30m'
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for CC3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20°C~+ 135°C',
+          accuracyMeasurement: '± 8 °C (± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines).'
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -30°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.01°~180°/s',
+          tiltSpeed: '0.01°~60°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          wifi: 'Optional',
+          embeddedBattery: 'Optional (totally 9 pcs 18650,120Wh)',
+          powerSupply: 'DC12V,3A',
+          powerConsumption: '＜30W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: 'φ165.6mmx267mm',
+          weight: '＜5Kg(with bracket)'
+        }
+      },
+    }
+  },
+  {
+    id: 51,
+    name: 'CC6',
+    info: {
+      description: 'Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermographyCamera,
+      featuresShort: [
+        'Built-in high sensitivity infrared thermal camera realizes clear infrared images without any light, perfect for dark night voyage',
+        'Design of the magnetic composite sucker, built-in large capacity battery, simple operation with the one-key deployment',
+        'Real time WiFi data transmission',
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '10 / 17 / 25 / 35 mm',
+          fov: '42*34 / 25.4*20.4 / 17.4*14 / 12.5*10'
+        },
+        opticalModule: {
+          imageSensor: '1/2.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '5.1-127.5mm, 25X',
+          fov: '51.69-3.66(wide to narrow)',
+          irRange: '30m'
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        measurementTemperature: {
+          temperatureRange: '-20°C~+ 135°C',
+          accuracyMeasurement: '± 8 °C (± 14.4 °F)',
+          measurementMethod: '3 temperature measurement rule types (points, areas, lines).'
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -30°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.01°~180°/s',
+          tiltSpeed: '0.01°~60°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          wifi: 'Optional',
+          embeddedBattery: 'Optional (totally 9 pcs 18650,120Wh)',
+          powerSupply: 'DC12V,3A',
+          powerConsumption: '＜30W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: 'φ165.6mmx267mm',
+          weight: '＜5Kg(with bracket)'
+        }
+      },
+    }
+  },
+  {
+    id: 52,
+    name: 'CL3',
+    info: {
+      description: 'Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'Built-in high sensitivity infrared thermal camera realizes clear infrared images without any light, perfect for dark night voyage',
+        'Design of the magnetic composite sucker, built-in large capacity battery, simple operation with the one-key deployment',
+        'Embedded gyroscopic image stabilization system',
+        'Leading thermal image processing technology: adaptive AGC, IDE; pan: 0.05°~250°/s, tilt: 0.05°~180°/s high speed rotation',
+        'Optional laser ranging or illumination'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '384x288',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '50 / 75 mm',
+          fov: '5.2*3.9 / 3.5*2.6'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '6.1-317mm, 52X',
+          fov: '61.8-1.6(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          vca: '4 VCA types for CL3 only (motion detection, cross line, intrusion, area entry and exit)',
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -60°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.05°~250°/s',
+          tiltSpeed: '0.05°~180°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 768*576,384*288',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          laserRangingIllumination: 'Optional',
+          wiper: 'Optional',
+          powerSupply: 'DC24V,5A',
+          powerConsumption: '＜60W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: 'φ310mmx446mm',
+          weight: '＜17Kg(with bracket)'
+        }
+      },
+    }
+  },
+    {
+    id: 52,
+    name: 'CL6',
+    info: {
+      description: 'Dual Spectrum PTZ Camera',
+      price: '9.999,00 ₽',
+      category_id: CategoryType.thermalSecurityCamera,
+      featuresShort: [
+        'Built-in high sensitivity infrared thermal camera realizes clear infrared images without any light, perfect for dark night voyage',
+        'Design of the magnetic composite sucker, built-in large capacity battery, simple operation with the one-key deployment',
+        'Embedded gyroscopic image stabilization system',
+        'Leading thermal image processing technology: adaptive AGC, IDE; pan: 0.05°~250°/s, tilt: 0.05°~180°/s high speed rotation',
+        'Optional laser ranging or illumination'
+      ],
+      features: {
+        item: {
+          detector: 'VOx Uncooled FPA',
+          resolution: '640x512',
+          pixelPitch: '12μm',
+          netd: '＜35mK@ 25℃',
+          spectralRange: '8~14μm',
+          focusMethod: 'Manual/Motorized(auto focus)',
+          lens: '50 / 75 mm',
+          fov: '8.7*7 / 5.8*4.6'
+        },
+        opticalModule: {
+          imageSensor: '1/1.8” Progressive Scan CMOS',
+          resolution: '1920(H)×1080(V)',
+          lens: '6.1-317mm, 52X',
+          fov: '61.8-1.6(wide to narrow)',
+        },
+        imageEffect: {
+          imageAdjustmen: 'Auto adjustment for contrast ratio & brightness & acutance',
+          uniformityCalibration: 'Manual/Auto shutter, background corrextion',
+          imageProcess: 'AGC, IDE',
+          palette: 'Optional 9 color palettes(rust, rainbow, white/black, etc.)',
+        },
+        smartFunction: {
+          fireDetection: 'Support',
+        },
+        ptz: {
+          movementRange: 'Pan:360° continuous; Tilt: -60°～+90°',
+          presets: '200',
+          powerMemory: 'Support',
+          panSpeed: '0.05°~250°/s',
+          tiltSpeed: '0.05°~180°/s',
+          autoHorizontalScan: 'Preset patrol / Auto line scanning & etc'
+        },
+        videoAudio: {
+          videoCompression: 'H.264/H.265',
+          mainStream: 'Visible - 1920*1080,1280*720, Thermal - 640*512',
+          subStream: 'Visible - 1280*720,768*576,640*480,384*288, Thermal - 384*288',
+          audioCompression: 'G.711',
+        },
+        network: {
+          protocols: 'IPv4/IPv6,HTTP,HTTPS,FTP,DNS,NTP,RTSP,TCP,UDP,DHCP',
+          api: 'ISAPI,SDK, third-party management platform, ONVIF',
+          commonFunction: 'Hearbet, password protection, multi-user access control',
+          security: 'Support password protection, bonding MAC ID, IP filtration',
+          simultaneousLiveView: '10 channels',
+          userHostLevel: 'Up to 9 users, 3 levels: Administrator, Operator, General',
+          webBrowser: 'Google Kernel Browser, Edge'
+        },
+        interface: {
+          alarm: '1x ch input, 1x ch output',
+          audio: '1x ch input, 1x ch output',
+          seriesPort: '1x ch RS485',
+          networkInterface: 'RJ45 10 M/100 M self-adaptive Ethernet',
+          storage: 'Embedded EMMC 16GB',
+        },
+        general: {
+          webClientLanguage: 'English',
+          laserRangingIllumination: 'Optional',
+          wiper: 'Optional',
+          powerSupply: 'DC24V,5A',
+          powerConsumption: '＜60W',
+          workingTemperature: '-20°C~+60°C, <90%RH',
+          storageTemperature: '–45°C ~ +75°C',
+          protection: 'IP66',
+          reliability: 'TVS 6000V lightning protection, surge protection, voltage transient protection',
+          size: 'φ310mmx446mm',
+          weight: '＜17Kg(with bracket)'
         }
       },
     }

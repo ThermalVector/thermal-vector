@@ -98,6 +98,7 @@ export type featGeneral = {
   weight: string,
   antiVibration?: string,
   communicationMode?: string,
+  embeddedBattery?: string,
   gyroscopes?: string,
   imageInterface?: string,
   laserRangingIllumination?: string,
@@ -107,6 +108,7 @@ export type featGeneral = {
   shockResistance?: string,
   webClientLanguage?: string,
   wiper?: string,
+  wifi?: string,
 }
 
 export type productFeature = {
