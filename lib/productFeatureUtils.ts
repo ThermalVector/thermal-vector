@@ -1,4 +1,5 @@
 import type { ProductType, productFeature } from '@/app/constants/types/productTypes';
+import { getFeatureLabelRu } from '@/app/constants/localizationRules';
 
 /** Flatten nested features object into path -> string (only string values). */
 export function flattenFeatures(
@@ -72,14 +73,9 @@ export const FEATURE_SECTION_LABELS: Record<string, string> = {
   smartFunction: 'Умные функции',
 };
 
-/** Sub-key label only (e.g. "item.resolution" -> "Resolution"). */
+/** Sub-key label only (e.g. "item.resolution" -> "Resolution"). Prefer getFeatureLabelRu for RU labels. */
 export function keyLabelFromPath(path: string): string {
-  const parts = path.split('.');
-  const key = parts.length > 1 ? parts.slice(1).join('.') : path;
-  return key
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/^./, (s) => s.toUpperCase())
-    .trim();
+  return getFeatureLabelRu(path);
 }
 
 /** Group feature paths by section, ordered by FEATURE_SECTION_LABELS then rest. */
