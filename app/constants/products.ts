@@ -58,6 +58,7 @@ export const products: ProductType[] = [
     id: 2,
     name: 'ATOM505C',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/8330b33775458dd4ffa545ddffeaead4.png',
       description: 'Analog NST Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -105,6 +106,7 @@ export const products: ProductType[] = [
     id: 3,
     name: 'ATOM507C',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/4afa6959956559a2530f470f1123f686.png?size=330150',
       description: 'Analog NST Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -248,6 +250,7 @@ export const products: ProductType[] = [
     id: 6,
     name: 'ATOM502C',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/5a5b78719fb98bcfbb09c9848ec264ac.png',
       description: 'Mini Analog Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -350,6 +353,7 @@ export const products: ProductType[] = [
     id: 8,
     name: 'TD-612C',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/d9c0f48d184709438b007e2aa97d3aad.png',
       description: 'Mini Analog Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -393,6 +397,7 @@ export const products: ProductType[] = [
     id: 9,
     name: 'TD-312C',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/d9c0f48d184709438b007e2aa97d3aad.png',
       description: 'Mini Analog Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -436,6 +441,7 @@ export const products: ProductType[] = [
     id: 10,
     name: 'TD-312E',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/d9c0f48d184709438b007e2aa97d3aad.png',
       description: 'Mini Analog Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -476,6 +482,7 @@ export const products: ProductType[] = [
     id: 11,
     name: 'TD-612E',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251126/d9c0f48d184709438b007e2aa97d3aad.png',
       description: 'Mini Analog Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -644,6 +651,7 @@ export const products: ProductType[] = [
     id: 14,
     name: 'ThermEye3V',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/0f278e6f6826c36455cc2f6afa0eaacb.png',
       description: 'IP Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -708,6 +716,7 @@ export const products: ProductType[] = [
     id: 15,
     name: 'ThermEye6V',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/0f278e6f6826c36455cc2f6afa0eaacb.png',
       description: 'IP Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -772,6 +781,7 @@ export const products: ProductType[] = [
     id: 16,
     name: 'ThermEye-D32',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/492139eb0a62420f07639ec4e0760b00.png',
       description: 'IP Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -847,6 +857,7 @@ export const products: ProductType[] = [
     id: 17,
     name: 'ThermEye-D62',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/492139eb0a62420f07639ec4e0760b00.png',
       description: 'IP Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -922,6 +933,7 @@ export const products: ProductType[] = [
     id: 18,
     name: 'ThermEye-D67',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/492139eb0a62420f07639ec4e0760b00.png',
       description: 'IP Thermal Imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1147,6 +1159,7 @@ export const products: ProductType[] = [
     id: 21,
     name: 'iThermal-T3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/e45eccd7d75c2ec4e6c3b05ca4635da3.png',
       description: 'IP Thermographic Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1217,6 +1230,7 @@ export const products: ProductType[] = [
     id: 22,
     name: 'iThermal-T6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/e45eccd7d75c2ec4e6c3b05ca4635da3.png',
       description: 'IP Thermographic Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1287,6 +1301,7 @@ export const products: ProductType[] = [
     id: 23,
     name: 'iThermal-S3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/e45eccd7d75c2ec4e6c3b05ca4635da3.png',
       description: 'Stable Thermomgraphic Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1355,6 +1370,7 @@ export const products: ProductType[] = [
     id: 24,
     name: 'iThermal-S6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/e45eccd7d75c2ec4e6c3b05ca4635da3.png',
       description: 'Stable Thermomgraphic Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1423,6 +1439,7 @@ export const products: ProductType[] = [
     id: 25,
     name: 'Quantum700-D',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/62ad80b7a5a2ba3a5b606db9611fa801.png',
       description: 'Security Analog Thermal imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1472,6 +1489,7 @@ export const products: ProductType[] = [
     id: 26,
     name: 'Quantum500-D',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240407/62ad80b7a5a2ba3a5b606db9611fa801.png',
       description: 'Security Analog Thermal imaging Core',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalCore,
@@ -1616,6 +1634,7 @@ export const products: ProductType[] = [
     id: 29,
     name: 'HS3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240327/84211a84ffed668190246999e6fad792.png',
       description: 'Outdoor IP Thermal Image Bullet Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -1693,6 +1712,7 @@ export const products: ProductType[] = [
     id: 30,
     name: 'HS6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240327/84211a84ffed668190246999e6fad792.png',
       description: 'Outdoor IP Thermal Image Bullet Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -1769,6 +1789,7 @@ export const products: ProductType[] = [
     id: 31,
     name: 'HM2',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240327/f7da61d9c2378dfec52a11a41a49a14d.png',
       description: 'Outdoor IP Dual Spectrum Bullet Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -1856,6 +1877,7 @@ export const products: ProductType[] = [
     id: 32,
     name: 'HM3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/e6510eced3c1f4e8d963040bf619fed2.png',
       description: 'Outdoor IP Dual Spectrum Bullet Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -1944,6 +1966,7 @@ export const products: ProductType[] = [
     id: 33,
     name: 'HM6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/e6510eced3c1f4e8d963040bf619fed2.png',
       description: 'Outdoor IP Dual Spectrum Bullet Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2031,6 +2054,7 @@ export const products: ProductType[] = [
     id: 34,
     name: 'QG3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/c56c66c977c102067ed23aed5c20713a.png',
       description: 'Dual Spectrum High Speed PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -2125,6 +2149,7 @@ export const products: ProductType[] = [
     id: 35,
     name: 'QG6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/c56c66c977c102067ed23aed5c20713a.png',
       description: 'Dual Spectrum High Speed PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -2218,6 +2243,7 @@ export const products: ProductType[] = [
     id: 36,
     name: 'CH3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/a9b2c715cd80636b6d5e80af02525312.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2305,6 +2331,7 @@ export const products: ProductType[] = [
     id: 37,
     name: 'CH6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/a9b2c715cd80636b6d5e80af02525312.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2391,6 +2418,7 @@ export const products: ProductType[] = [
     id: 38,
     name: 'TG3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/0e081b55061216a9aedadd7bb4c509dd.png',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2479,6 +2507,7 @@ export const products: ProductType[] = [
     id: 39,
     name: 'TG6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/0e081b55061216a9aedadd7bb4c509dd.png',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2566,6 +2595,7 @@ export const products: ProductType[] = [
     id: 40,
     name: 'TH3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251211/346acc443316f031fa16a57096bf8521.png?size=68918',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2655,6 +2685,7 @@ export const products: ProductType[] = [
     id: 41,
     name: 'TH6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251211/346acc443316f031fa16a57096bf8521.png?size=68918',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -2745,6 +2776,7 @@ export const products: ProductType[] = [
     id: 42,
     name: 'YS3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/7ad929aff7f9e58ffb1ff44eec7d9710.png',
       description: 'Mobile Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -2836,6 +2868,7 @@ export const products: ProductType[] = [
     id: 43,
     name: 'YS6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/7ad929aff7f9e58ffb1ff44eec7d9710.png',
       description: 'Mobile Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -2926,6 +2959,7 @@ export const products: ProductType[] = [
     id: 44,
     name: 'Y3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/6cc70f9972ad845da4450b7db3d585c9.png',
       description: 'Mobile Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -3017,6 +3051,7 @@ export const products: ProductType[] = [
     id: 45,
     name: 'Y6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/6cc70f9972ad845da4450b7db3d585c9.png',
       description: 'Mobile Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -3107,6 +3142,7 @@ export const products: ProductType[] = [
     id: 46,
     name: 'E3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/0050fb4a639ee623034daf4ccc74458a.png',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -3195,6 +3231,7 @@ export const products: ProductType[] = [
     id: 47,
     name: 'E6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/0050fb4a639ee623034daf4ccc74458a.png',
       description: 'Middle and Long Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -3282,6 +3319,7 @@ export const products: ProductType[] = [
     id: 48,
     name: 'EL3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/a58bc58799dc19fcc9624c477718d0d0.png',
       description: 'Ultra Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -3370,6 +3408,7 @@ export const products: ProductType[] = [
     id: 49,
     name: 'EL6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/a58bc58799dc19fcc9624c477718d0d0.png',
       description: 'Ultra Distance Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -3457,6 +3496,7 @@ export const products: ProductType[] = [
     id: 50,
     name: 'CC3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/f38a8e7037bd02510cca3b05be1f3949.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -3548,6 +3588,7 @@ export const products: ProductType[] = [
     id: 51,
     name: 'CC6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20240408/f38a8e7037bd02510cca3b05be1f3949.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermographyCamera,
@@ -3638,6 +3679,7 @@ export const products: ProductType[] = [
     id: 52,
     name: 'CL3',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/1e5f5a54ca141f2606fd5e3be4c9e399.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,
@@ -3721,10 +3763,11 @@ export const products: ProductType[] = [
       },
     }
   },
-    {
-    id: 52,
+  {
+    id: 53,
     name: 'CL6',
     info: {
+      imageUrl: 'https://security.thermeyetec.com/upload/image/20251206/1e5f5a54ca141f2606fd5e3be4c9e399.png',
       description: 'Dual Spectrum PTZ Camera',
       price: '9.999,00 ₽',
       category_id: CategoryType.thermalSecurityCamera,

@@ -11,7 +11,7 @@ type BackToCatalogLinkProps = {
 
 export default function BackToCatalogLink({
   href,
-  children = 'Назад в каталог',
+  children = 'В каталог',
 }: BackToCatalogLinkProps) {
   return (
     <Button

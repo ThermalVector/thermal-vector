@@ -124,15 +124,25 @@ export type productFeature = {
   smartFunction?: featSmartFunction
 }
 
+export type moduleInfo = {
+  description: string;
+  price: string;
+  category_id: number;
+  featuresShort: Array<string>;
+  features: productFeature;
+  imageUrl?: string;
+}
+
+export type lensInfo = {
+  category_id: number;
+  features: {
+    fovDog: string,
+    
+  }
+}
+
 export type ProductType = {
   id: number;
   name: string;
-  info: {
-    description: string;
-    price: string;
-    category_id: number;
-    featuresShort: Array<string>;
-    features: productFeature;
-    imageUrl?: string;
-  }
+  info: moduleInfo | lensInfo
 };

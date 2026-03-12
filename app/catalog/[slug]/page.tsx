@@ -83,6 +83,7 @@ export default async function CategoryPage({
             price={product.info.price}
             description={product.info.description}
             categorySlug={slug}
+            imageUrl={product.info.imageUrl}
           />
         ))}
       </div>

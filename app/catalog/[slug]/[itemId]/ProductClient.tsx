@@ -33,13 +33,13 @@ export default function ProductClient({
         <CardBody className='p-0'>
           <div className='md:flex'>
             {/* Product image — same placeholder as ProductCard */}
-            <div className='md:w-1/2'>
-              <div className='relative h-96 md:h-full bg-gray-200 flex items-center justify-center text-gray-400'>
+            <div className='md:w-1/3'>
+              <div className='relative h-80 md:h-full bg-gray-200 flex items-center justify-center text-gray-400'>
                 {product.info.imageUrl ? (
                   <img
                     src={product.info.imageUrl}
                     alt={product.name}
-                    className='w-full h-full object-cover'
+                    className='w-full h-full object-contain p-4'
                   />
                 ) : (
                   <>Изображение {product.id}</>
@@ -48,7 +48,7 @@ export default function ProductClient({
             </div>
 
             {/* Product info — catalog palette: blue-600 price/category, gray text */}
-            <div className='md:w-1/2 p-6 md:p-8'>
+            <div className='md:w-2/3 p-6 md:p-8'>
               <div className='mb-4'>
                 <span className='text-sm text-blue-600 font-semibold uppercase tracking-wide'>
                   {categories.find((c) => c.id === product.info.category_id)?.ru ?? ''}

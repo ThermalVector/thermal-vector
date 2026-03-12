@@ -50,6 +50,7 @@ export default function CatalogPage() {
                     price={product.info.price}
                     description={product.info.description}
                     categorySlug={categoryUrl}
+                    imageUrl={product.info.imageUrl}
                   />
                 ))}
               </div>
