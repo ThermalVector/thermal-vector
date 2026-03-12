@@ -134,11 +134,14 @@ export type moduleInfo = {
 }
 
 export type lensInfo = {
+  description: string;
+  price: string;
   category_id: number;
+  featuresShort: Array<string>;
   features: {
     fovDog: string,
-    
   }
+  imageUrl?: string;
 }
 
 export type ProductType = {
